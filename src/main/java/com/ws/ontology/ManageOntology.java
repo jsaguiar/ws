@@ -1,4 +1,4 @@
-package com.ws.extremespots.com.ws.ontology;
+package com.ws.ontology;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
