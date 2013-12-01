@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import com.ws.extremespots.StaticVariables;
 
 public class JsonParser {
     ArrayList<PointOfInterest> points_of_interest;
@@ -21,7 +22,7 @@ public class JsonParser {
     public JsonParser(){
         try {
             //read file
-            BufferedReader br = new BufferedReader(new FileReader("data/point_of_interests.json"));
+            BufferedReader br = new BufferedReader(new FileReader(StaticVariables.points_of_interest_json_file));
             String line;
             points_of_interest = new ArrayList<PointOfInterest>();
             //for each line

@@ -3,6 +3,7 @@ package com.ws.data;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.util.FileManager;
+import com.ws.extremespots.StaticVariables;
 import org.apache.log4j.BasicConfigurator;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +15,7 @@ public class ManageOntology {
         public void importOntology(){
             BasicConfigurator.configure();
             Model model = ModelFactory.createDefaultModel();
-            InputStream in = FileManager.get().open("owl/ws_ont.owl");
+            InputStream in = FileManager.get().open(StaticVariables.owl_file);
 
             if(in == null){
                 throw new IllegalArgumentException("File not found");
