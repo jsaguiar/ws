@@ -13,24 +13,27 @@ import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class JsonParser {
+    ArrayList<PointOfInterest> points_of_interest;
 
     public JsonParser(){
         try {
             //read file
             BufferedReader br = new BufferedReader(new FileReader("data/point_of_interests.json"));
             String line;
+            points_of_interest = new ArrayList<PointOfInterest>();
             //for each line
-            System.out.println("Start");
             PointOfInterest poi = new PointOfInterest();
             while ((line = br.readLine()) != null) {
                 //parse point of interest
                 poi = parsePointOfInterest(line);
+                points_of_interest.add(poi);
             }
             br.close();
-            System.out.println("Printing the last poi parsed:");
-            System.out.println(poi.toString());
+            //System.out.println("Printing the last poi parsed:");
+            //System.out.println(poi.toString());
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
