@@ -1,5 +1,6 @@
 package com.ws.data;
 
+import com.hp.hpl.jena.query.Dataset;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.tdb.TDBFactory;
 import com.ws.extremespots.StaticVariables;
@@ -21,7 +22,10 @@ public class Parser {
     public Parser(){
         points_of_interest = new JsonParser().points_of_interest;
         ontModel = ManageOntology.importOntology();
-        Model tdbModel = TDBFactory.createModel(StaticVariables.triple_store_directory);
+        Dataset ds = TDBFactory.createDataset(StaticVariables.triple_store_directory) ;
+        Model tdbModel = ds.getDefaultModel() ;
+
+
         for(PointOfInterest poi: points_of_interest){
             addPointOfInterest(poi);
         }
