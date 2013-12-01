@@ -1,4 +1,4 @@
-package com.ws.shared;
+package com.ws.data;
 
 import java.util.List;
 import java.util.HashMap;
