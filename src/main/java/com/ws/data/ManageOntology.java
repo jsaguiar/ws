@@ -12,7 +12,7 @@ import java.io.InputStream;
 public class ManageOntology {
 
 
-        public void importOntology(){
+        public static Model importOntology(){
             BasicConfigurator.configure();
             Model model = ModelFactory.createDefaultModel();
             InputStream in = FileManager.get().open(StaticVariables.owl_file);
@@ -28,6 +28,8 @@ public class ManageOntology {
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }
+
+            return model;
 
         }
 
