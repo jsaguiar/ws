@@ -1,4 +1,4 @@
-package com.ws.ontology;
+package com.ws.data;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
