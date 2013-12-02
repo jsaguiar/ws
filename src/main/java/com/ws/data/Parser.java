@@ -3,8 +3,7 @@ package com.ws.data;
 import com.hp.hpl.jena.query.Dataset;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryFactory;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.*;
 import com.hp.hpl.jena.sparql.algebra.Algebra;
 import com.hp.hpl.jena.sparql.algebra.Op;
 import com.hp.hpl.jena.sparql.engine.QueryIterator;
@@ -105,6 +104,31 @@ public class Parser {
             System.out.println(b) ;
         }
         qIter.close() ;
+
+
+        System.out.println("########################################################################");
+
+        StmtIterator iter = ManageOntology.importOntology().listStatements();
+
+        // print out the predicate, subject and object of each statement
+        while (iter.hasNext()) {
+            Statement stmt      = iter.nextStatement();         // get next statement
+            Resource  subject   = stmt.getSubject();   // get the subject
+            Property predicate = stmt.getPredicate(); // get the predicate
+            RDFNode   object    = stmt.getObject();    // get the object
+
+            System.out.print(subject.toString());
+            System.out.print(" " + predicate.toString() + " ");
+
+
+            if (object instanceof Resource) {
+                System.out.print(object.toString());
+            } else {
+                // object is a literal
+                System.out.print(" \"" + object.toString() + "\"");
+            }
+            System.out.println(" .");
+        }
 
     }
 
