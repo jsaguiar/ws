@@ -106,7 +106,7 @@ public class Parser {
         file = new File("current_ontology.xml");
         try {
             fop = new FileOutputStream(file);
-            parser.ontModel.write(fop);
+            parser.ontModel.write(fop,"N-TRIPLES");
             fop.flush();
             fop.close();
         } catch (FileNotFoundException e) {
@@ -142,7 +142,7 @@ public class Parser {
         }
         qIter.close() ;
                */
-    /*
+       /*
         System.out.println("########################################################################");
 
         StmtIterator iter = ManageOntology.importOntology().listStatements();
@@ -166,8 +166,8 @@ public class Parser {
             }
             System.out.println(" .");
         }
-    */
 
+        */
     }
 
 
