@@ -13,6 +13,7 @@ local.properties
 .settings/
 .loadpath
 TripleStoreDirectory/
+target/
 
 # External tool builders
 .externalToolBuilders/
