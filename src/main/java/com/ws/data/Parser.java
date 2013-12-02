@@ -5,6 +5,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.tdb.TDBFactory;
+import com.hp.hpl.jena.vocabulary.RDF;
 import com.ws.extremespots.StaticVariables;
 
 import java.util.ArrayList;
@@ -46,12 +47,16 @@ public class Parser {
         return aux;
     }
     private void addPointOfInterest(PointOfInterest poi){
-        Resource cell = ontModel.createResource(namespace+poi.name,ontModel.getResource(namespace+refactor_spot_category(poi.categories.get(0).getName())));
+        String category = refactor_spot_category(poi.categories.get(0).getName());
+        Resource spot = ontModel.createResource(namespace+poi.name,ontModel.getResource(namespace+category));
+        spot.addProperty(RDF.type, category);
+        //spot.addProperty(ontModel.getProperty(cellphoneNS+"CellMake"), phone.make.trim());
 
 
     }
     public static void main (String args[]) {
         Parser parser = new Parser();
+
 
     }
 
