@@ -30,7 +30,7 @@ public class JsonParser {
             while ((line = br.readLine()) != null) {
                 //parse point of interest
                 poi = parsePointOfInterest(line);
-                points_of_interest.add(poi);
+                addPointOfInterest(poi);
             }
             br.close();
             //System.out.println("Printing the last poi parsed:");
@@ -46,8 +46,13 @@ public class JsonParser {
         return poi;
     }
 
-    public static void main (String args[]) {
-        JsonParser jp = new JsonParser();
+    private void addPointOfInterest(PointOfInterest poi){
+        if(poi.categories.size()>0){
+            points_of_interest.add(poi);
+        }
+
     }
+
+
 
 }

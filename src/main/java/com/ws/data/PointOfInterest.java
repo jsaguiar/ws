@@ -20,7 +20,7 @@ public class PointOfInterest {
 
     HashMap contact;
     HashMap location;
-    List categories;
+    List<Category> categories;
     Boolean verified;
 
     Boolean restricted;
