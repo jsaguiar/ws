@@ -11,7 +11,10 @@ import com.hp.hpl.jena.sparql.engine.binding.Binding;
 import com.hp.hpl.jena.tdb.TDBFactory;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.ws.extremespots.StaticVariables;
+import org.apache.commons.io.FileUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -83,6 +86,12 @@ public class Parser {
 
     }
     public static void main (String args[]) {
+        try {
+            FileUtils.deleteDirectory(new File(StaticVariables.triple_store_directory));
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
         Parser parser = new Parser();
 
 
