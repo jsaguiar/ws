@@ -50,7 +50,24 @@ public class Parser {
         String category = refactor_spot_category(poi.categories.get(0).getName());
         Resource spot = ontModel.createResource(namespace+poi.name,ontModel.getResource(namespace+category));
         spot.addProperty(RDF.type, category);
-        //spot.addProperty(ontModel.getProperty(cellphoneNS+"CellMake"), phone.make.trim());
+
+        String description = (poi.description!=null)? poi.description :"";
+        spot.addProperty(ontModel.getProperty(namespace+"Description"), description);
+
+        String contact = (poi.contact.phone!=null)? poi.contact.phone :"";
+        spot.addProperty(ontModel.getProperty(namespace+"Contact"), contact);
+
+        String id = (poi.id!=null)? poi.id :"";
+        spot.addProperty(ontModel.getProperty(namespace+"Id"), id);
+
+        //String lat = (poi.id!=null)? poi.id :"";
+        //spot.addProperty(ontModel.getProperty(namespace+"Lat"), lat);
+
+        //String lng = (poi.ln!=null)? poi.lng :"";
+        //spot.addProperty(ontModel.getProperty(namespace+"Lng"), lng);
+
+
+
 
 
     }

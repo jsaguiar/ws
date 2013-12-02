@@ -19,7 +19,7 @@ public class PointOfInterest {
     String id;
 
     Contact contact;
-    HashMap location;
+    Location location;
     List<Category> categories;
     Boolean verified;
 
@@ -66,7 +66,7 @@ public class PointOfInterest {
 
     }
 
-    public PointOfInterest(String city, String country, Boolean gmaps, String name, String id, Contact contact, HashMap location, List categories, Boolean verified, Boolean restricted, HashMap stats, String url, HashMap likes, String canonicalUrl, List specials, HashMap photos, HashMap hereNow, String description, Integer createdAt, HashMap mayor, HashMap tips, List tags, String shortUrl, String timeZone, HashMap listed, HashMap pageUpdates, List groups, Float rating, HashMap hours, HashMap popular, HashMap menu, HashMap price, String storeId, List specialsNearby, HashMap beenHere, Boolean like, Boolean dislike, List roles, HashMap flags, HashMap page, Integer current_status) {
+    public PointOfInterest(String city, String country, Boolean gmaps, String name, String id, Contact contact, Location location, List categories, Boolean verified, Boolean restricted, HashMap stats, String url, HashMap likes, String canonicalUrl, List specials, HashMap photos, HashMap hereNow, String description, Integer createdAt, HashMap mayor, HashMap tips, List tags, String shortUrl, String timeZone, HashMap listed, HashMap pageUpdates, List groups, Float rating, HashMap hours, HashMap popular, HashMap menu, HashMap price, String storeId, List specialsNearby, HashMap beenHere, Boolean like, Boolean dislike, List roles, HashMap flags, HashMap page, Integer current_status) {
         this.city = city;
         this.country = country;
         this.gmaps = gmaps;
@@ -158,11 +158,11 @@ public class PointOfInterest {
         this.contact = contact;
     }
 
-    public HashMap getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(HashMap location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 
