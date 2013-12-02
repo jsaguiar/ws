@@ -14,6 +14,8 @@ import com.ws.extremespots.StaticVariables;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -55,7 +57,7 @@ public class Parser {
     }
     private void addPointOfInterest(PointOfInterest poi){
         String category = refactor_spot_category(poi.categories.get(0).getName());
-        Resource spot = ontModel.createResource(namespace+poi.id);
+        Resource spot = ontModel.createResource(namespace+poi.id,ontModel.getResource(namespace+category));
         spot.addProperty(RDF.type, category);
 
         String description = (poi.description!=null)? poi.description :"";
@@ -94,8 +96,25 @@ public class Parser {
 
         Parser parser = new Parser();
 
+        FileOutputStream fop = null;
+        File file;
+        file = new File("current_ontology.xml");
+        try {
+            fop = new FileOutputStream(file);
+            parser.ontModel.write(fop);
+            fop.flush();
+            fop.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
 
+
+        /*
         String s = "SELECT DISTINCT ?s { ?s ?p ?o }";
+
+        //String s = "SELECT * WHERE { ?x < " + parser.ontModel.getProperty(parser.namespace +"HasId") + "> \" "+ "4e37f028aeb7c8fe3175fb6c"+ "\" .";
 
         // Parse
         Query query = QueryFactory.create(s) ;
@@ -117,8 +136,8 @@ public class Parser {
             System.out.println(b) ;
         }
         qIter.close() ;
-
-
+               */
+    /*
         System.out.println("########################################################################");
 
         StmtIterator iter = ManageOntology.importOntology().listStatements();
@@ -142,6 +161,7 @@ public class Parser {
             }
             System.out.println(" .");
         }
+    */
 
     }
 
