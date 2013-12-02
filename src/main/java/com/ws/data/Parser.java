@@ -1,9 +1,14 @@
 package com.ws.data;
 
 import com.hp.hpl.jena.query.Dataset;
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.ResourceFactory;
+import com.hp.hpl.jena.sparql.algebra.Algebra;
+import com.hp.hpl.jena.sparql.algebra.Op;
+import com.hp.hpl.jena.sparql.engine.QueryIterator;
+import com.hp.hpl.jena.sparql.engine.binding.Binding;
 import com.hp.hpl.jena.tdb.TDBFactory;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.ws.extremespots.StaticVariables;
@@ -77,6 +82,29 @@ public class Parser {
     public static void main (String args[]) {
         Parser parser = new Parser();
 
+
+        String s = "SELECT DISTINCT ?s { ?s ?p ?o }";
+
+        // Parse
+        Query query = QueryFactory.create(s) ;
+        System.out.println(query) ;
+
+        // Generate algebra
+        Op op = Algebra.compile(query) ;
+        op = Algebra.optimize(op) ;
+        System.out.println(op) ;
+
+        // Execute it.
+        QueryIterator qIter = Algebra.exec(op, ManageOntology.importOntology()) ;
+
+        // Results
+        System.out.println("---------------------------------------------------------------------------");
+        for ( ; qIter.hasNext() ; )
+        {
+            Binding b = qIter.nextBinding() ;
+            System.out.println(b) ;
+        }
+        qIter.close() ;
 
     }
 
