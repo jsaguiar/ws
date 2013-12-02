@@ -65,8 +65,6 @@ public class Parser {
         if(poi.name!=null){
             spot.addProperty(ontModel.getProperty(namespace+"HasName"), poi.name);
         }
-        if(poi.description!=null)
-            spot.addProperty(ontModel.getProperty(namespace+"HasDescription"), poi.description);
 
         if(poi.contact.phone!=null)
             spot.addProperty(ontModel.getProperty(namespace+"HasContact"), poi.contact.phone);
@@ -81,12 +79,14 @@ public class Parser {
             spot.addProperty(ontModel.getProperty(namespace+"HasLng"), poi.location.lng.toString());
         }
 
-        Resource description2 = ontModel.getProperty(namespace+"Description"+poi.description);
-        if(description2 == null){
-            description2 = ontModel.createResource(namespace+"Description"+poi.description);
-            description2.addProperty(RDF.type, "Description");
+        if(poi.description!=null){
+            Resource description2 = ontModel.getProperty(namespace+"Description"+poi.description);
+            if(description2 == null){
+                description2 = ontModel.createResource(namespace+"Description"+poi.description);
+                description2.addProperty(RDF.type, "Description");
+            }
+            spot.addProperty(ontModel.getProperty(namespace+"HasDescription"), description2.getURI());
         }
-        description2.addProperty(ontModel.getProperty(namespace+"hasTargetSpot"), spot.getURI());
 
 
 
