@@ -52,20 +52,23 @@ public class Parser {
         spot.addProperty(RDF.type, category);
 
         String description = (poi.description!=null)? poi.description :"";
-        spot.addProperty(ontModel.getProperty(namespace+"Description"), description);
+        spot.addProperty(ontModel.getProperty(namespace+"HasDescription"), description);
 
         String contact = (poi.contact.phone!=null)? poi.contact.phone :"";
-        spot.addProperty(ontModel.getProperty(namespace+"Contact"), contact);
+        spot.addProperty(ontModel.getProperty(namespace+"HasContact"), contact);
 
         String id = (poi.id!=null)? poi.id :"";
-        spot.addProperty(ontModel.getProperty(namespace+"Id"), id);
+        spot.addProperty(ontModel.getProperty(namespace+"HasId"), id);
 
-        //String lat = (poi.id!=null)? poi.id :"";
-        //spot.addProperty(ontModel.getProperty(namespace+"Lat"), lat);
+        if(poi.location.lat!=null){
+            spot.addProperty(ontModel.getProperty(namespace+"HasLat"), poi.location.lat.toString());
+        }
+        if(poi.location.lng!=null){
+            spot.addProperty(ontModel.getProperty(namespace+"HasLng"), poi.location.lng.toString());
+        }
 
-        //String lng = (poi.ln!=null)? poi.lng :"";
-        //spot.addProperty(ontModel.getProperty(namespace+"Lng"), lng);
-
+        Resource description2 = ontModel.createResource(namespace+"Description"+poi.description);
+        description2.addProperty(ontModel.getProperty(namespace+"hasTargetSpot"), spot.getURI());
 
 
 
