@@ -62,21 +62,21 @@ public class Parser {
                 .addProperty(RDF.type, category);
 
 
-        String name = (poi.name!=null)? poi.name :"";
-        spot.addProperty(ontModel.getProperty(namespace+"HasName"), name);
-
-        String description = (poi.description!=null)? poi.description :"";
-        spot.addProperty(ontModel.getProperty(namespace+"HasDescription"), description);
-
-        String contact = (poi.contact.phone!=null)? poi.contact.phone :"";
-        spot.addProperty(ontModel.getProperty(namespace+"HasContact"), contact);
-
-        String id = (poi._id!=null)? poi._id :"";
-        spot.addProperty(ontModel.getProperty(namespace+"HasId"), id);
-
-        if(poi.location.lat!=null){
-            spot.addProperty(ontModel.getProperty(namespace+"HasLat"), poi.location.lat.toString());
+        if(poi.name!=null){
+            spot.addProperty(ontModel.getProperty(namespace+"HasName"), poi.name);
         }
+        if(poi.description!=null)
+            spot.addProperty(ontModel.getProperty(namespace+"HasDescription"), poi.description);
+
+        if(poi.contact.phone!=null)
+            spot.addProperty(ontModel.getProperty(namespace+"HasContact"), poi.contact.phone);
+
+        if(poi._id!=null)
+            spot.addProperty(ontModel.getProperty(namespace+"HasId"), poi._id);
+
+        if(poi.location.lat!=null)
+            spot.addProperty(ontModel.getProperty(namespace+"HasLat"), poi.location.lat.toString());
+
         if(poi.location.lng!=null){
             spot.addProperty(ontModel.getProperty(namespace+"HasLng"), poi.location.lng.toString());
         }
