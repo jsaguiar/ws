@@ -57,8 +57,13 @@ public class Parser {
     }
     private void addPointOfInterest(PointOfInterest poi){
         String category = refactor_spot_category(poi.categories.get(0).getName());
-        Resource spot = ontModel.createResource(namespace+poi.id,ontModel.getResource(namespace+category));
-        spot.addProperty(RDF.type, category);
+        String category_id = poi.categories.get(0).getId();
+        Resource spot = ontModel.createResource(namespace+poi._id)
+                .addProperty(RDF.type, category);
+
+
+        String name = (poi.name!=null)? poi.name :"";
+        spot.addProperty(ontModel.getProperty(namespace+"HasName"), name);
 
         String description = (poi.description!=null)? poi.description :"";
         spot.addProperty(ontModel.getProperty(namespace+"HasDescription"), description);
@@ -66,7 +71,7 @@ public class Parser {
         String contact = (poi.contact.phone!=null)? poi.contact.phone :"";
         spot.addProperty(ontModel.getProperty(namespace+"HasContact"), contact);
 
-        String id = (poi.id!=null)? poi.id :"";
+        String id = (poi._id!=null)? poi._id :"";
         spot.addProperty(ontModel.getProperty(namespace+"HasId"), id);
 
         if(poi.location.lat!=null){
@@ -76,9 +81,9 @@ public class Parser {
             spot.addProperty(ontModel.getProperty(namespace+"HasLng"), poi.location.lng.toString());
         }
 
-        Resource description2 = ontModel.getProperty(namespace+"Description"+poi.id);
+        Resource description2 = ontModel.getProperty(namespace+"Description"+poi.description);
         if(description2 == null){
-            description2 = ontModel.createResource(namespace+"Description"+poi.id);
+            description2 = ontModel.createResource(namespace+"Description"+poi.description);
             description2.addProperty(RDF.type, "Description");
         }
         description2.addProperty(ontModel.getProperty(namespace+"hasTargetSpot"), spot.getURI());

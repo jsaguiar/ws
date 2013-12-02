@@ -16,7 +16,7 @@ public class PointOfInterest {
     String country;
     Boolean gmaps;
     String name;
-    String id;
+    String _id;
 
     Contact contact;
     Location location;
@@ -66,12 +66,12 @@ public class PointOfInterest {
 
     }
 
-    public PointOfInterest(String city, String country, Boolean gmaps, String name, String id, Contact contact, Location location, List categories, Boolean verified, Boolean restricted, HashMap stats, String url, HashMap likes, String canonicalUrl, List specials, HashMap photos, HashMap hereNow, String description, Integer createdAt, HashMap mayor, HashMap tips, List tags, String shortUrl, String timeZone, HashMap listed, HashMap pageUpdates, List groups, Float rating, HashMap hours, HashMap popular, HashMap menu, HashMap price, String storeId, List specialsNearby, HashMap beenHere, Boolean like, Boolean dislike, List roles, HashMap flags, HashMap page, Integer current_status) {
+    public PointOfInterest(String city, String country, Boolean gmaps, String name, String _id, Contact contact, Location location, List categories, Boolean verified, Boolean restricted, HashMap stats, String url, HashMap likes, String canonicalUrl, List specials, HashMap photos, HashMap hereNow, String description, Integer createdAt, HashMap mayor, HashMap tips, List tags, String shortUrl, String timeZone, HashMap listed, HashMap pageUpdates, List groups, Float rating, HashMap hours, HashMap popular, HashMap menu, HashMap price, String storeId, List specialsNearby, HashMap beenHere, Boolean like, Boolean dislike, List roles, HashMap flags, HashMap page, Integer current_status) {
         this.city = city;
         this.country = country;
         this.gmaps = gmaps;
         this.name = name;
-        this.id = id;
+        this._id = _id;
         this.contact = contact;
         this.location = location;
         this.categories = categories;
@@ -143,11 +143,11 @@ public class PointOfInterest {
     }
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this._id = id;
     }
 
     public Contact getContact() {
@@ -445,7 +445,7 @@ public class PointOfInterest {
                 ", country='" + country + '\'' +
                 ", gmaps=" + gmaps +
                 ", name='" + name + '\'' +
-                ", id='" + id + '\'' +
+                ", id='" + _id + '\'' +
                 ", contact=" + contact +
                 ", location=" + location +
                 ", categories=" + categories +

@@ -34,7 +34,7 @@ public class JsonParser {
             }
             br.close();
             //System.out.println("Printing the last poi parsed:");
-            //System.out.println(poi.toString());
+            System.out.println(poi.toString());
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
@@ -54,7 +54,7 @@ public class JsonParser {
     }
     public static void main (String args[]) {
         JsonParser jp = new JsonParser();
-        System.out.println(jp.points_of_interest.get(0).toString());
+        //System.out.println(jp.points_of_interest.get(0).toString());
 
 
     }
