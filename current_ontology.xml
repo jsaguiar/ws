@@ -11353,11 +11353,6 @@
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#hadDescription">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Description"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#School">
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
