@@ -60,8 +60,6 @@ public class Parser {
         if(poi.name!=null){
             spot.addProperty(ontModel.getProperty(namespace+"HasName"), poi.name);
         }
-        if(poi.description!=null)
-            spot.addProperty(ontModel.getProperty(namespace+"HasDescription"), poi.description);
 
         if(poi.contact.phone!=null)
             spot.addProperty(ontModel.getProperty(namespace+"HasContact"), poi.contact.phone);
@@ -76,12 +74,14 @@ public class Parser {
             spot.addProperty(ontModel.getProperty(namespace+"HasLng"), poi.location.lng.toString());
         }
 
-        Resource description2 = ontModel.getProperty(namespace+"Description"+poi.description);
-        if(description2 == null){
-            description2 = ontModel.createResource(namespace+"Description"+poi.description);
-            description2.addProperty(RDF.type, "Description");
+        if(poi.description!=null){
+            Resource description2 = ontModel.getProperty(namespace+"Description"+poi.description);
+            if(description2 == null){
+                description2 = ontModel.createResource(namespace+"Description"+poi.description);
+                description2.addProperty(RDF.type, "Description");
+            }
+            spot.addProperty(ontModel.getProperty(namespace+"HasDescription"), description2.getURI());
         }
-        description2.addProperty(ontModel.getProperty(namespace+"hasTargetSpot"), spot.getURI());
 
 
 
@@ -101,7 +101,7 @@ public class Parser {
         file = new File("current_ontology.xml");
         try {
             fop = new FileOutputStream(file);
-            parser.ontModel.write(fop);
+            parser.ontModel.write(fop,"N-TRIPLES");
             fop.flush();
             fop.close();
         } catch (FileNotFoundException e) {
@@ -137,7 +137,7 @@ public class Parser {
         }
         qIter.close() ;
                */
-    /*
+       /*
         System.out.println("########################################################################");
 
         StmtIterator iter = ManageOntology.importOntology().listStatements();
@@ -161,8 +161,8 @@ public class Parser {
             }
             System.out.println(" .");
         }
-    */
 
+        */
     }
 
 

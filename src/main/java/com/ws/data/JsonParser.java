@@ -54,6 +54,7 @@ public class JsonParser {
     }
     public static void main (String args[]) {
         JsonParser jp = new JsonParser();
+
         //System.out.println(jp.points_of_interest.get(0).toString());
 
 
