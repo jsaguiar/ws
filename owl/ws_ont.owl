@@ -16,10 +16,10 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <Ontology rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -27,7 +27,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasDescription -->
@@ -36,10 +36,10 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Description"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </ObjectProperty>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -47,7 +47,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasCloseHourSaturday -->
@@ -56,7 +56,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasCloseHourSunday -->
@@ -65,7 +65,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasCloseHourWeekDay -->
@@ -74,7 +74,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasContact -->
@@ -83,7 +83,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasID -->
@@ -92,7 +92,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;int"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasLat -->
@@ -101,7 +101,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;double"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasLng -->
@@ -110,7 +110,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;double"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasName -->
@@ -119,7 +119,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasOpenHourSaturday -->
@@ -128,7 +128,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasOpenHourSunday -->
@@ -137,7 +137,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasOpenHourWeekDay -->
@@ -146,7 +146,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </DatatypeProperty>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasPrice -->
@@ -155,10 +155,19 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;short"/>
     </DatatypeProperty>
-    
 
 
-    <!-- 
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#hadDescription -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#hadDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Description"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+
+
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -166,7 +175,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Accessories_Store -->
@@ -174,7 +183,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Accessories_Store">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Clothing_Store"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Afghan_Restaurant -->
@@ -182,7 +191,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Afghan_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#African_Restaurant -->
@@ -190,7 +199,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#African_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport -->
@@ -198,7 +207,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Food_Court -->
@@ -206,7 +215,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Food_Court">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Gate -->
@@ -214,7 +223,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Gate">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Lounge -->
@@ -222,7 +231,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Lounge">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Terminal -->
@@ -230,7 +239,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Terminal">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Tram -->
@@ -238,7 +247,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport_Tram">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#American_Restaurant -->
@@ -246,23 +255,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#American_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Animal_Shelter -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Animal_Shelter">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Antique_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Antique_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Apres_Ski_Bar -->
@@ -270,23 +279,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Apres_Ski_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Area"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Aquarium -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Aquarium">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arcade -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arcade">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arepa_Restaurant -->
@@ -294,7 +303,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arepa_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Argentinian_Restaurant -->
@@ -302,15 +311,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Argentinian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Art_Gallery -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Art_Gallery">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Art_Museum -->
@@ -318,23 +327,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Art_Museum">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Museum"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts&amp;Crafts_Store -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts&amp;Crafts_Store">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
+    </Class>
+
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </Class>
-    
 
-
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts_&amp;_Crafts_Store -->
-
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts_&amp;_Crafts_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
-    </Class>
-    
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Asian_Restaurant -->
@@ -342,7 +351,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Asian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Assisted_Living -->
@@ -350,23 +359,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Assisted_Living">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residences"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Auditorium -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Auditorium">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Australian_Restaurant -->
@@ -374,15 +383,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Australian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Automotive_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Automotive_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#BBQ_Joint -->
@@ -390,7 +399,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#BBQ_Joint">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bagel_Shop -->
@@ -398,7 +407,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bagel_Shop">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bakery -->
@@ -406,15 +415,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bakery">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bank -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bank">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bar -->
@@ -422,15 +431,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Baseball_Field -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Baseball_Field">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Baseball_Stadium -->
@@ -438,15 +447,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Baseball_Stadium">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Basketball_Court -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Basketball_Court">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Basketball_Stadium -->
@@ -454,23 +463,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Basketball_Stadium">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Beach -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Beach">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bed/Breakfast -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bed/Breakfast">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bed!Breakfast -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bed!Breakfast">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Beer_Garden -->
@@ -478,31 +487,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Beer_Garden">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bike_Rental/Bike_Share -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bike_Rental/Bike_Share">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bike_Rental!Bike_Share -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bike_Rental!Bike_Share">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bike_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bike_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Board_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Board_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Boarding_House -->
@@ -510,7 +519,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Boarding_House">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Boat_or_Ferry -->
@@ -518,15 +527,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Boat_or_Ferry">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ferry"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bookstore -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bookstore">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Boutique -->
@@ -534,15 +543,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Boutique">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Clothing_Store"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bowling_Alley -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bowling_Alley">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Brazilian_Restaurant -->
@@ -550,7 +559,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Brazilian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Breakfast_Spot -->
@@ -558,7 +567,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Breakfast_Spot">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Brewery -->
@@ -566,31 +575,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Brewery">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bridal_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bridal_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bridge -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bridge">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Building -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Building">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Burger_Joint -->
@@ -598,7 +607,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Burger_Joint">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Burrito_Place -->
@@ -606,7 +615,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Burrito_Place">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bus_Line -->
@@ -614,7 +623,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bus_Line">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bus_Station"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bus_Station -->
@@ -622,15 +631,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Bus_Station">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Butcher -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Butcher">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cafeteria -->
@@ -638,7 +647,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cafeteria">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Office"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Café -->
@@ -646,23 +655,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Café">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cajun/Creole_Restaurant -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cajun/Creole_Restaurant">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cajun!Creole_Restaurant -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cajun!Creole_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Camera_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Camera_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Campaign_Office -->
@@ -670,23 +679,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Campaign_Office">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Office"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Campground -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Campground">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Candy_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Candy_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Capitol_Building -->
@@ -694,23 +703,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Capitol_Building">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Government_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Car_Dealership -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Car_Dealership">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Car_Wash -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Car_Wash">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Caribbean_Restaurant -->
@@ -718,39 +727,39 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Caribbean_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Casino -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Casino">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Castle -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Castle">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cemetery -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cemetery">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cheese_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cheese_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Chinese_Restaurant -->
@@ -758,7 +767,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Chinese_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Church -->
@@ -766,15 +775,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Church">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spiritual_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#City -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#City">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#City_Hall -->
@@ -782,23 +791,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#City_Hall">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Government_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Climbing_Gym -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Climbing_Gym">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym/Fitness_Center"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym!Fitness_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Clothing_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Clothing_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cocktail_Bar -->
@@ -806,7 +815,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cocktail_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Coffee_Shop -->
@@ -814,31 +823,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Coffee_Shop">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Academic_Building -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Academic_Building">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Administrative_Building -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Administrative_Building">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Arts_Building -->
@@ -846,15 +855,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Arts_Building">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Academic_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Auditorium -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Auditorium">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Baseball_Diamond -->
@@ -862,7 +871,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Baseball_Diamond">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Basketball_Court -->
@@ -870,31 +879,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Basketball_Court">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Bookstore -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Bookstore">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Cafeteria -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Cafeteria">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Classroom -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Classroom">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Communications_Building -->
@@ -902,7 +911,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Communications_Building">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Academic_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Cricket_Pitch -->
@@ -910,7 +919,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Cricket_Pitch">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Engineering_Building -->
@@ -918,7 +927,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Engineering_Building">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Academic_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Football_Field -->
@@ -926,15 +935,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Football_Field">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Gym -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Gym">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_History_Building -->
@@ -942,7 +951,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_History_Building">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Academic_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Hockey_Rink -->
@@ -950,23 +959,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Hockey_Rink">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Lab -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Lab">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Library -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Library">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Math_Building -->
@@ -974,31 +983,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Math_Building">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Academic_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Quad -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Quad">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Rec_Center -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Rec_Center">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Residence_Hall -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Residence_Hall">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Science_Building -->
@@ -1006,7 +1015,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Science_Building">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Academic_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Soccer_Field -->
@@ -1014,15 +1023,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Soccer_Field">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Technology_Building -->
@@ -1030,7 +1039,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Technology_Building">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Academic_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Tennis_Court -->
@@ -1038,15 +1047,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Tennis_Court">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Theater -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Theater">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Track -->
@@ -1054,31 +1063,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Track">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College_Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Comedy_Club -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Comedy_Club">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Community_College -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Community_College">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Concert_Hall -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Concert_Hall">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Conference_Room -->
@@ -1086,31 +1095,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Conference_Room">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Office"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Convenience_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Convenience_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Convention_Center -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Convention_Center">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cosmetics_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cosmetics_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Courthouse -->
@@ -1118,7 +1127,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Courthouse">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Government_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Coworking_Space -->
@@ -1126,15 +1135,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Coworking_Space">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Office"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Credit_Union -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Credit_Union">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cricket_Ground -->
@@ -1142,7 +1151,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cricket_Ground">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cuban_Restaurant -->
@@ -1150,7 +1159,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cuban_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cupcake_Shop -->
@@ -1158,7 +1167,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Cupcake_Shop">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dance_Studio -->
@@ -1166,23 +1175,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dance_Studio">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Performing_Arts_Venue"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Daycare -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Daycare">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Deli/Bodega -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Deli/Bodega">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Deli!Bodega -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Deli!Bodega">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dentist’s_Office -->
@@ -1190,29 +1199,29 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dentist’s_Office">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Department_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Department_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Description -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Description"/>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Design_Studio -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Design_Studio">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dessert_Shop -->
@@ -1220,7 +1229,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dessert_Shop">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dim_Sum_Restaurant -->
@@ -1228,7 +1237,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dim_Sum_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Diner -->
@@ -1236,7 +1245,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Diner">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Distillery -->
@@ -1244,7 +1253,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Distillery">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dive_Bar -->
@@ -1252,7 +1261,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dive_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Doctor’s_Office -->
@@ -1260,15 +1269,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Doctor’s_Office">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dog_Run -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dog_Run">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Donut_Shop -->
@@ -1276,15 +1285,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Donut_Shop">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Drugstore/Pharmacy -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Drugstore/Pharmacy">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Drugstore!Pharmacy -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Drugstore!Pharmacy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dumpling_Restaurant -->
@@ -1292,15 +1301,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Dumpling_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#EV_Charging_Station -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#EV_Charging_Station">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Eastern_European_Restaurant -->
@@ -1308,15 +1317,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Eastern_European_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Electronics_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Electronics_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Elementary_School -->
@@ -1324,15 +1333,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Elementary_School">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#School"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Embassy/Consulate -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Embassy/Consulate">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Embassy!Consulate -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Embassy!Consulate">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Emergency_Room -->
@@ -1340,7 +1349,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Emergency_Room">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ethiopian_Restaurant -->
@@ -1348,31 +1357,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ethiopian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Event_Space -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Event_Space">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Factory -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Factory">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fair -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fair">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Falafel_Restaurant -->
@@ -1380,23 +1389,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Falafel_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Farm -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Farm">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Farmers_Market -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Farmers_Market">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fast_Food_Restaurant -->
@@ -1404,7 +1413,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fast_Food_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ferry -->
@@ -1412,15 +1421,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ferry">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Field -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Field">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Filipino_Restaurant -->
@@ -1428,15 +1437,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Filipino_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Financial_or_Legal_Service -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Financial_or_Legal_Service">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fire_Station -->
@@ -1444,39 +1453,39 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fire_Station">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Government_Building"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fish/Chips_Shop -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fish/Chips_Shop">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fish!Chips_Shop -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fish!Chips_Shop">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fish_Market -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fish_Market">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Flea_Market -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Flea_Market">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Flower_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Flower_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food -->
@@ -1484,23 +1493,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food_Court -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food_Court">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food_Truck -->
@@ -1508,7 +1517,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food_Truck">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Football_Stadium -->
@@ -1516,15 +1525,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Football_Stadium">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fraternity_House -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fraternity_House">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#French_Restaurant -->
@@ -1532,7 +1541,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#French_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fried_Chicken_Joint -->
@@ -1540,7 +1549,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Fried_Chicken_Joint">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Frozen_Yogurt -->
@@ -1548,55 +1557,55 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Frozen_Yogurt">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Funeral_Home -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Funeral_Home">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Furniture/Home_Store -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Furniture/Home_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Furniture!Home_Store -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Furniture!Home_Store">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gaming_Cafe -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gaming_Cafe">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Garden -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Garden">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Garden_Center -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Garden_Center">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gas_Station/Garage -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gas_Station/Garage">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gas_Station!Garage -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gas_Station!Garage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gastropub -->
@@ -1604,7 +1613,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gastropub">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gay_Bar -->
@@ -1612,23 +1621,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gay_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#General_College_&amp;_University -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#General_College_&amp;_University">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#General_College&amp;University -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#General_College&amp;University">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#General_Entertainment -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#General_Entertainment">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#General_Travel -->
@@ -1636,7 +1645,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#General_Travel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#German_Restaurant -->
@@ -1644,15 +1653,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#German_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gift_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gift_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gluten-free_Restaurant -->
@@ -1660,39 +1669,39 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gluten-free_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Golf_Course -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Golf_Course">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gourmet_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gourmet_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Government_Building -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Government_Building">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Great_Outdoors -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Great_Outdoors">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Greek_Restaurant -->
@@ -1700,63 +1709,63 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Greek_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Grocery_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Grocery_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym/Fitness_Center"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym!Fitness_Center"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym/Fitness_Center -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym/Fitness_Center">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym!Fitness_Center -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym!Fitness_Center">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym_Pool -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym_Pool">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym/Fitness_Center"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym!Fitness_Center"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Harbor/Marina -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Harbor/Marina">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Harbor!Marina -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Harbor!Marina">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hardware_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hardware_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Health_Food_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Health_Food_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#High_School -->
@@ -1764,23 +1773,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#High_School">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#School"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hiking_Trail -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hiking_Trail">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Historic_Site -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Historic_Site">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#History_Museum -->
@@ -1788,15 +1797,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#History_Museum">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Museum"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hobby_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hobby_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hockey_Arena -->
@@ -1804,23 +1813,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hockey_Arena">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hockey_Field -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hockey_Field">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Home_(private) -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Home_(private)">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Home_$private$ -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Home_$private$">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residences"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hookah_Bar -->
@@ -1828,7 +1837,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hookah_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hospital -->
@@ -1836,7 +1845,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hospital">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hostel -->
@@ -1844,7 +1853,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hostel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hot_Dog_Joint -->
@@ -1852,15 +1861,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hot_Dog_Joint">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hot_Spring -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hot_Spring">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel -->
@@ -1868,7 +1877,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel_Bar -->
@@ -1876,7 +1885,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel_Pool -->
@@ -1884,7 +1893,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel_Pool">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Housing_Development -->
@@ -1892,15 +1901,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Housing_Development">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residences"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hunting_Supply -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hunting_Supply">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ice_Cream_Shop -->
@@ -1908,7 +1917,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ice_Cream_Shop">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Indian_Restaurant -->
@@ -1916,7 +1925,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Indian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Indie_Movie_Theater -->
@@ -1924,7 +1933,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Indie_Movie_Theater">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Movie_Theater"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Indie_Theater -->
@@ -1932,7 +1941,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Indie_Theater">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Performing_Arts_Venue"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Indonesian_Restaurant -->
@@ -1940,23 +1949,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Indonesian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Internet_Cafe -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Internet_Cafe">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Island -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Island">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Italian_Restaurant -->
@@ -1964,7 +1973,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Italian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Japanese_Restaurant -->
@@ -1972,7 +1981,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Japanese_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Jazz_Club -->
@@ -1980,15 +1989,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Jazz_Club">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Music_Venue"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Jewelry_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Jewelry_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Juice_Bar -->
@@ -1996,7 +2005,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Juice_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Karaoke_Bar -->
@@ -2004,7 +2013,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Karaoke_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Kids_Store -->
@@ -2012,7 +2021,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Kids_Store">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Clothing_Store"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Korean_Restaurant -->
@@ -2020,7 +2029,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Korean_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Laboratory -->
@@ -2028,15 +2037,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Laboratory">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Lake -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Lake">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Latin_American_Restaurant -->
@@ -2044,31 +2053,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Latin_American_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Laundry_Service -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Laundry_Service">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Law_School -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Law_School">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Library -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Library">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Light_Rail -->
@@ -2076,15 +2085,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Light_Rail">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Lighthouse -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Lighthouse">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Lingerie_Store -->
@@ -2092,15 +2101,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Lingerie_Store">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Clothing_Store"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Liquor_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Liquor_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Lounge -->
@@ -2108,15 +2117,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Lounge">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mac/Cheese_Joint -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mac/Cheese_Joint">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mac!Cheese_Joint -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mac!Cheese_Joint">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Malaysian_Restaurant -->
@@ -2124,47 +2133,47 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Malaysian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mall -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mall">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Market -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Market">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Martial_Arts_Dojo -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Martial_Arts_Dojo">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym/Fitness_Center"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym!Fitness_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_Center -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_Center">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_School -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_School">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mediterranean_Restaurant -->
@@ -2172,7 +2181,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mediterranean_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Meeting_Room -->
@@ -2180,7 +2189,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Meeting_Room">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Convention_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Men’s_Store -->
@@ -2188,7 +2197,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Men’s_Store">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Clothing_Store"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mexican_Restaurant -->
@@ -2196,7 +2205,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mexican_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Middle_Eastern_Restaurant -->
@@ -2204,7 +2213,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Middle_Eastern_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Middle_School -->
@@ -2212,31 +2221,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Middle_School">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#School"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Military_Base -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Military_Base">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Miscellaneous_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Miscellaneous_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mobile_Phone_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mobile_Phone_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Molecular_Gastronomy_Restaurant -->
@@ -2244,7 +2253,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Molecular_Gastronomy_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mongolian_Restaurant -->
@@ -2252,15 +2261,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mongolian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Monument_/_Landmark -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Monument_/_Landmark">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Monument!Landmark -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Monument!Landmark">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Government_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Moroccan_Restaurant -->
@@ -2268,7 +2277,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Moroccan_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mosque -->
@@ -2276,7 +2285,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mosque">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spiritual_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Motel -->
@@ -2284,31 +2293,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Motel">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Motorcycle_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Motorcycle_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mountain -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Mountain">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Movie_Theater -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Movie_Theater">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Moving_Target -->
@@ -2316,7 +2325,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Moving_Target">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Multiplex -->
@@ -2324,15 +2333,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Multiplex">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Movie_Theater"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Museum -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Museum">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Music_School -->
@@ -2340,39 +2349,39 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Music_School">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#School"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Music_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Music_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Music_Venue -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Music_Venue">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nail_Salon -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nail_Salon">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Neighborhood -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Neighborhood">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#New_American_Restaurant -->
@@ -2380,15 +2389,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#New_American_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Newsstand -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Newsstand">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightclub -->
@@ -2396,7 +2405,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightclub">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots -->
@@ -2404,15 +2413,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Non-Profit -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Non-Profit">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nursery_School -->
@@ -2420,15 +2429,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nursery_School">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#School"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Office -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Office">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Opera_House -->
@@ -2436,7 +2445,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Opera_House">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Performing_Arts_Venue"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Optical_Shop -->
@@ -2444,15 +2453,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Optical_Shop">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Other_Great_Outdoors -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Other_Great_Outdoors">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Other_Nightlife -->
@@ -2460,63 +2469,63 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Other_Nightlife">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Paella_Restaurant -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Paella_Restaurant">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Southern/Soul_Food_Restaurant"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Southern!Soul_Food_Restaurant"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Paintball_Field -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Paintball_Field">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Paper/Office_Supplies_Store -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Paper/Office_Supplies_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Paper!Office_Supplies_Store -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Paper!Office_Supplies_Store">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Park -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Park">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Parking -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Parking">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Performing_Arts_Venue -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Performing_Arts_Venue">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Peruvian_Restaurant -->
@@ -2524,31 +2533,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Peruvian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pet_Service -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pet_Service">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pet_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pet_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Photography_Lab -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Photography_Lab">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Piano_Bar -->
@@ -2556,7 +2565,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Piano_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Music_Venue"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pier -->
@@ -2564,7 +2573,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pier">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ferry"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pizza_Place -->
@@ -2572,7 +2581,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pizza_Place">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Plane -->
@@ -2580,7 +2589,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Plane">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Airport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Planetarium -->
@@ -2588,7 +2597,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Planetarium">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Museum"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Platform -->
@@ -2596,23 +2605,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Platform">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Train_Station"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Playground -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Playground">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Plaza -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Plaza">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Police_Station -->
@@ -2620,23 +2629,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Police_Station">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Government_Building"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pool -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pool">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pool_Hall -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pool_Hall">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Portuguese_Restaurant -->
@@ -2644,23 +2653,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Portuguese_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Post_Office -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Post_Office">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pub -->
@@ -2668,63 +2677,63 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Pub">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Public_Art -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Public_Art">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Racetrack -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Racetrack">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Radio_Station -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Radio_Station">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ramen/Noodle_House -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ramen/Noodle_House">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ramen!Noodle_House -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ramen!Noodle_House">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Real_Estate_Office -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Real_Estate_Office">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Record_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Record_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Recycling_Facility -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Recycling_Facility">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Rental_Car_Location -->
@@ -2732,7 +2741,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Rental_Car_Location">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residences -->
@@ -2740,15 +2749,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residences">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residential_Building_(Apartment/Condo) -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residential_Building_(Apartment/Condo)">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residential_Building_$Apartment!Condo$ -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residential_Building_$Apartment!Condo$">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Residences"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Resort -->
@@ -2756,7 +2765,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Resort">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Rest_Area -->
@@ -2764,7 +2773,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Rest_Area">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Restaurant -->
@@ -2772,15 +2781,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#River -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#River">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Road -->
@@ -2788,15 +2797,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Road">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Rock_Climbing_Spot -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Rock_Climbing_Spot">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Rock_Club -->
@@ -2804,7 +2813,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Rock_Club">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Music_Venue"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Roof_Deck -->
@@ -2812,7 +2821,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Roof_Deck">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Hotel"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sake_Bar -->
@@ -2820,15 +2829,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sake_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Salon/Barbershop -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Salon/Barbershop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Salon!Barbershop -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Salon!Barbershop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sandwich_Place -->
@@ -2836,7 +2845,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sandwich_Place">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Scandinavian_Restaurant -->
@@ -2844,23 +2853,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Scandinavian_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Scenic_Lookout -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Scenic_Lookout">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#School -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#School">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Science_Museum -->
@@ -2868,15 +2877,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Science_Museum">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Museum"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sculpture_Garden -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sculpture_Garden">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Seafood_Restaurant -->
@@ -2884,7 +2893,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Seafood_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shoe_Store -->
@@ -2892,15 +2901,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shoe_Store">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Clothing_Store"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shrine -->
@@ -2908,31 +2917,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shrine">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spiritual_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Skate_Park -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Skate_Park">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Skating_Rink -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Skating_Rink">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Area -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Area">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Chairlift -->
@@ -2940,7 +2949,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Chairlift">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Area"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Chalet -->
@@ -2948,7 +2957,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Chalet">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Area"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Lodge -->
@@ -2956,7 +2965,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Lodge">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Area"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Trail -->
@@ -2964,15 +2973,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Trail">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Ski_Area"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Smoke_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Smoke_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Snack_Place -->
@@ -2980,15 +2989,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Snack_Place">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Soccer_Field -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Soccer_Field">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Soccer_Stadium -->
@@ -2996,15 +3005,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Soccer_Stadium">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sorority_House -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sorority_House">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Soup_Place -->
@@ -3012,23 +3021,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Soup_Place">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Southern/Soul_Food_Restaurant -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Southern/Soul_Food_Restaurant">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Southern!Soul_Food_Restaurant -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Southern!Soul_Food_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spa/Massage -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spa/Massage">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spa!Massage -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spa!Massage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Speakeasy -->
@@ -3036,23 +3045,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Speakeasy">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spiritual_Center -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spiritual_Center">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sporting_Goods_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sporting_Goods_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sports_Bar -->
@@ -3060,29 +3069,29 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sports_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stables -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stables">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Steakhouse -->
@@ -3090,15 +3099,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Steakhouse">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Storage_Facility -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Storage_Facility">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Strip_Club -->
@@ -3106,15 +3115,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Strip_Club">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Student_Center -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Student_Center">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Subway -->
@@ -3122,7 +3131,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Subway">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Surf_Spot -->
@@ -3130,7 +3139,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Surf_Spot">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Beach"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sushi_Restaurant -->
@@ -3138,7 +3147,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Sushi_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Swiss_Restaurant -->
@@ -3146,7 +3155,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Swiss_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Synagogue -->
@@ -3154,7 +3163,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Synagogue">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spiritual_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Taco_Place -->
@@ -3162,23 +3171,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Taco_Place">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tailor_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tailor_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tanning_Salon -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tanning_Salon">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tapas_Restaurant -->
@@ -3186,15 +3195,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tapas_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tattoo_Parlor -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tattoo_Parlor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Taxi -->
@@ -3202,7 +3211,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Taxi">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tea_Room -->
@@ -3210,7 +3219,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tea_Room">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tech_Startup -->
@@ -3218,7 +3227,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tech_Startup">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Office"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Temple -->
@@ -3226,7 +3235,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Temple">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spiritual_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tennis -->
@@ -3234,15 +3243,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tennis">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tennis_Court -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tennis_Court">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Thai_Restaurant -->
@@ -3250,7 +3259,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Thai_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Theater -->
@@ -3258,31 +3267,31 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Theater">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Performing_Arts_Venue"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Theme_Park -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Theme_Park">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Theme_Park_Ride_/_Attraction -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Theme_Park_Ride_/_Attraction">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Theme_Park_Ride!Attraction -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Theme_Park_Ride!Attraction">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Theme_Park"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Thrift/Vintage_Store -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Thrift/Vintage_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Thrift!Vintage_Store -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Thrift!Vintage_Store">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tourist_Information_Center -->
@@ -3290,23 +3299,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Tourist_Information_Center">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Toy/Game_Store -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Toy/Game_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Toy!Game_Store -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Toy!Game_Store">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Track -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Track">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym/Fitness_Center"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym!Fitness_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Track_Stadium -->
@@ -3314,15 +3323,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Track_Stadium">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Stadium"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Trade_School -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Trade_School">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Train -->
@@ -3330,7 +3339,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Train">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Train_Station"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Train_Station -->
@@ -3338,7 +3347,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Train_Station">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport -->
@@ -3346,15 +3355,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel_Agency -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel_Agency">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel_Lounge -->
@@ -3362,7 +3371,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel_Lounge">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Travel/Transport"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Turkish_Restaurant -->
@@ -3370,23 +3379,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Turkish_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#University -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#University">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College/University"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#College!University"/>
     </Class>
-    
 
 
-    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Vegetarian/Vegan_Restaurant -->
 
-    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Vegetarian/Vegan_Restaurant">
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Vegetarian!Vegan_Restaurant -->
+
+    <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Vegetarian!Vegan_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Veterinarian -->
@@ -3394,23 +3403,23 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Veterinarian">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Medical_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Video_Game_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Video_Game_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Video_Store -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Video_Store">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops/Services"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Shops!Services"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Vietnamese_Restaurant -->
@@ -3418,55 +3427,55 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Vietnamese_Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Vineyard -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Vineyard">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Volcano -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Volcano">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Volleyball_Court -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Volleyball_Court">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics_&amp;_Sports"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Athletics&amp;Sports"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Voting_Booth -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Voting_Booth">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional/Other_Places"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Professional!Other_Places"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Water_Park -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Water_Park">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Well -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Well">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors/Recreation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Outdoors!Recreation"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Whisky_Bar -->
@@ -3474,7 +3483,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Whisky_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Wine_Bar -->
@@ -3482,15 +3491,15 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Wine_Bar">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Nightlife_Spots"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Wine_Shop -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Wine_Shop">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food/Drink_Shop"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food!Drink_Shop"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Winery -->
@@ -3498,7 +3507,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Winery">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Wings_Joint -->
@@ -3506,7 +3515,7 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Wings_Joint">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Food"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Women’s_Store -->
@@ -3514,21 +3523,21 @@
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Women’s_Store">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Clothing_Store"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Yoga_Studio -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Yoga_Studio">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym/Fitness_Center"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Gym!Fitness_Center"/>
     </Class>
-    
+
 
 
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Zoo -->
 
     <Class rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Zoo">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts/Entertainment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Arts!Entertainment"/>
     </Class>
 </rdf:RDF>
 
