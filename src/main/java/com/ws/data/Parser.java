@@ -49,17 +49,17 @@ public class Parser {
     }
 
     public static String refactor_spot_category(String aux){
-        aux=aux.replace(" / ","/");
-        aux=aux.replace(" & ","/");
-        aux=aux.replace("&","/");
+        aux=aux.replace(" / ","//");
+        aux=aux.replace(" & ","//");
+        aux=aux.replace("&","//");
         aux=aux.replace(" ","_");
         return aux;
     }
     private void addPointOfInterest(PointOfInterest poi){
-        String category = refactor_spot_category(poi.categories.get(0).getName());
+        String category =  (poi.categories.get(0).getName());
         String category_id = poi.categories.get(0).getId();
         Resource spot = ontModel.createResource(namespace+poi._id)
-                .addProperty(RDF.type, category);
+                .addProperty(RDF.type, ontModel.getProperty(namespace+category));
 
 
         if(poi.name!=null){
