@@ -1,0 +1,2 @@
+platform :ios
+pod 'Redland-ObjC', :git => 'https://github.com/p2/Redland-ObjC'
