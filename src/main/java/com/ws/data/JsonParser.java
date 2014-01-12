@@ -47,7 +47,8 @@ public class JsonParser {
     }
 
     private void addPointOfInterest(PointOfInterest poi){
-        if(poi.categories.size()>0){
+        //ensure that the POI belongs to a category
+        if(poi.categories != null && poi.categories.size()>0){
             points_of_interest.add(poi);
         }
 
