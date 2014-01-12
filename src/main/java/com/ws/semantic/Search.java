@@ -1,5 +1,7 @@
 package com.ws.semantic;
 
+import java.util.ArrayList;
+
 /**
  * Created with IntelliJ IDEA.
  * User: pedrocarmona
@@ -8,7 +10,9 @@ package com.ws.semantic;
  * To change this template use File | Settings | File Templates.
  */
 public class Search {
+    ArrayList<String> keywords;
 
-    public Search() {
+    public Search(String query) {
+        keywords = QuerySemanticProcessor.parse(query);
     }
 }
