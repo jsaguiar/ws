@@ -9,7 +9,7 @@ package com.ws.extremespots;
  */
 public class StaticVariables {
     //public static String points_of_interest_json_file = "data/point_of_interests.json";
-    public static String points_of_interest_json_file = "data/point_of_interests10000.json";
+    public static String points_of_interest_json_file = "data/point_of_interests274.json";
     public static String owl_file = "owl/ws_ont.owl";
     public static String triple_store_directory = "TripleStoreDirectory";
     public static String ontology_name_space = "http://www.semanticweb.org/joao/ontologies/2013/10/POIs#";
