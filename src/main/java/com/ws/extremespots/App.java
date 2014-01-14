@@ -26,7 +26,7 @@ public class App extends Object {
 
     private static void search(){
         Search s = new Search();
-        String query = "Portuguese Restaurant";
+        String query = "hotel";
         Search.search(query);
         if (s.vsON == false) {
             System.out.println("******************");

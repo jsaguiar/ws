@@ -505,7 +505,7 @@ public class Search {
         for (int i = 0; i < termos.length; i++) {//nao preciso de verificar por null pq e a primeira pesquisa
             queryString = prefixos + "SELECT ?x WHERE { ?x rdf:type \"" + termos[i].toLowerCase() + "\". ?x rdf:type ?t}";
             //System.out.println("querystring: "+queryString);
-            com.hp.hpl.jena.query.Query query = QueryFactory.create(queryString);
+            Query query = QueryFactory.create(queryString);
             QueryExecution qExec = QueryExecutionFactory.create(query, tdbModel);
             ResultSet results = qExec.execSelect();
             //ResultSetFormatter.out(System.out,results,query);
@@ -567,10 +567,11 @@ public class Search {
 
 
         if (soloProps.isEmpty()) {
-            System.out.println("solopros empty");
+            //System.out.println("solopros empty");
 
             for (int m = 0; m < finalResults.size(); m++) {
-                System.out.println("URI: " + getTermination(finalResults.get(m).getURI()));
+                //System.out.println("URI: " + getTermination(finalResults.get(m).getURI()));
+                PoiToString(finalResults.get(m).getURI());
             }
         } else {
             System.out.println("solopros not empty");
@@ -610,6 +611,20 @@ public class Search {
                 System.out.println("URI: " + getTermination(recKeyword.get(m).getURI()));
             }
         }
+    }
+
+    public static void PoiToString(String uri){
+        String queryString = prefixos
+        + "SELECT ?property ?resource\n"
+        + "WHERE {\n"
+        +    "<"+uri+"> ?property  ?resource.\n"
+        + "}\n";
+
+        Query query = QueryFactory.create(queryString);
+        QueryExecution qExec = QueryExecutionFactory.create(query, tdbModel);
+        ResultSet results = qExec.execSelect();
+        ResultSetFormatter.out(System.out,results,query);
+
     }
 
 }
