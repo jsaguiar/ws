@@ -3,6 +3,8 @@ package com.ws.extremespots;
 
 import com.ws.semantic.Search;
 
+import java.util.ArrayList;
+
 /*
 import org.apache.jena.fuseki.Fuseki;
 import org.apache.jena.fuseki.server.SPARQLServer;
@@ -14,6 +16,27 @@ public class App extends Object {
 
     public static void main(String args[]) {
         // create an empty graph
-        Search s = new Search("best hotel in sidney");
+
+
+        search();
+
+        // System.out.println(s.getResults());
+
+    }
+
+    private static void search(){
+        Search s = new Search();
+        String query = "Portuguese Restaurant";
+        Search.search(query);
+        if (s.vsON == false) {
+            System.out.println("******************");
+              System.out.println(Search.finalResults);
+//            System.out.println(Search.recResults);
+//            System.out.println(Search.recKeyword);
+            System.out.println("******************");
+
+        }else {
+            System.out.println("A pesquisa é ambígua ou não foram encontrados produtos correspondentes.");
+        }
     }
 }
