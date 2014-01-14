@@ -18,6 +18,7 @@ public class App extends Object {
         // create an empty graph
 
 
+
         search();
 
         // System.out.println(s.getResults());
@@ -26,17 +27,8 @@ public class App extends Object {
 
     private static void search(){
         Search s = new Search();
-        String query = "hotel";
+        String query = "portuguese restaurant";
         Search.search(query);
-        if (s.vsON == false) {
-            System.out.println("******************");
-              System.out.println(Search.finalResults);
-//            System.out.println(Search.recResults);
-//            System.out.println(Search.recKeyword);
-            System.out.println("******************");
 
-        }else {
-            System.out.println("A pesquisa é ambígua ou não foram encontrados produtos correspondentes.");
-        }
     }
 }
