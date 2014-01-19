@@ -1,5 +1,0 @@
-#!/bin/bash
-echo Starting...
-echo To exit use : crtl + c
-open http://localhost:3030/
-fuseki-server --config=config-tdb.ttl
