@@ -19,16 +19,12 @@ public class App extends Object {
 
 
 
-        search();
 
+        Search s = new Search();
+        String query = "portuguese restaurant";
+        s.search(query);
         // System.out.println(s.getResults());
 
     }
 
-    private static void search(){
-        Search s = new Search();
-        String query = "portuguese restaurant";
-        Search.search(query);
-
-    }
 }

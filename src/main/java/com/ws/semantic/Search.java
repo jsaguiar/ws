@@ -42,6 +42,9 @@ public class Search {
             + "PREFIX project:<http://www.semanticweb.org/joao/ontologies/2013/10/POIs#>\n";
 
 
+    static public HashMap<String, ResultRecord> resultRecords;
+
+
     static public Model tdbModel;
     static public HashMap<Resource, Integer> resultados;
     static public HashMap<String, Integer> properties;
@@ -71,6 +74,7 @@ public class Search {
         QueryExecution qExec;
 
         namespace = StaticVariables.ontology_name_space;
+
 
         resultados = new HashMap();
         properties = new HashMap();
@@ -192,21 +196,44 @@ public class Search {
 
 
 
+    public void combinationsArray(String s){
+        String [] words = s.split(" ");
+        ArrayList<String> frases = new ArrayList<String>();
+        for(int i=0; i<(words.length*2-1);i++){
+            frases.add("");
+        }
 
-    public static void search1(String s) {
+        for(int i=0; i<words.length-1;i++){
+            for(int j=0; j< words.length; j++) {
+                frases.add(j, frases.get(j)+words[j]+" ");
+                if(words[j].contains("'s")){
+                    break;
+                }
+            }
+        }
+    }
+
+    public void search(String s) {
+
 
         //QuerySemanticProcessor
 
         QuerySemanticProcessor qp = new QuerySemanticProcessor(tdbModel,s);
 
-        qp.parse();
+        for(String part : s.split(" "))
+            qp.findClasses(part);
+
+        System.out.println("DEBUG:");
+        for(String part : qp.sentence.classes)
+            System.out.println(part);
+
         return;
     }
 
-    public static void search(String s) {
+    public static void search2(String s) {
 
         QuerySemanticProcessor qp = new QuerySemanticProcessor(tdbModel,s);
-        qp.parse();
+        qp.detect_words();
         termos =  new String[qp.palavras.size()];
         for(int i=0; i < qp.palavras.size();i++){
             termos[i] = qp.palavras.get(i);
@@ -218,8 +245,8 @@ public class Search {
         for(String t:termos){
             System.out.println(t.toString());
         }
-        QuerySemanticProcessor.findClass();
-        QuerySemanticProcessor.findProps();
+        //QuerySemanticProcessor.findClass();
+        //QuerySemanticProcessor.findProps();
         //findOps();
 
         recResults = returnRec();

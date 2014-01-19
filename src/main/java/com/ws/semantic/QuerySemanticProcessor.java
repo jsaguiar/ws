@@ -41,20 +41,22 @@ public class QuerySemanticProcessor {
     ArrayList<Integer> means = new ArrayList<Integer>();
     ArrayList<String> names = new ArrayList<String>();
     //ArrayList<Return> resultsList = new ArrayList<Return>();
+
+
+    public Sentence sentence;
+
     String userQuestion = "";
     int foundPrint = 0;
 
 public QuerySemanticProcessor(Model tdbModel, String query){
         this.tdbModel = tdbModel;
         separate = query.split(" ");
+        sentence = new Sentence(query);
+}
 
-    }
-
-    public void parse(){
-        //ArrayList<String> keywords = identifyKeywords();
-        //removeUnidentified(keywords);
-
+    public void detect_words(){
         int i;
+
 
         // Divide a frase nas suas partes
         checker();
@@ -69,21 +71,41 @@ public QuerySemanticProcessor(Model tdbModel, String query){
             System.out.println(palavras.get(i) + " " + means.get(i));
         }
 
+        for (String part :palavras){
+            sentence.sentence = sentence.sentence+palavras;
+        }
 
-        //return keywords;
     }
-    public static ArrayList<String> identifyKeywords(){
-        return new ArrayList<String>();
-    }
-    public static ArrayList<String> removeUnidentified(ArrayList<String> keywords){
-        return keywords;
-    }
+
 
     public void deleteFalseInstances()
     {
         int i, j;
         for (i = 0; i < palavras.size(); i++)
         {
+
+            if (means.get(i) == CLASS)
+            {
+                System.out.println("asdassdas");
+                for (j = i + 1; j < palavras.size(); j++)
+                {
+                    if (palavras.get(i).contains(palavras.get(j)) && means.get(j) == CLASS )
+                    {
+                        palavras.remove(i);
+                        means.remove(i);
+                        names.remove(i);
+                        i--;
+                    } else if (palavras.get(j).contains(palavras.get(i)) && means.get(j) == CLASS )
+                    {
+                        palavras.remove(j);
+                        means.remove(j);
+                        names.remove(j);
+                    }else{
+                        break;
+                    }
+                }
+            }
+
             if (means.get(i) == INSTANCE)
             {
                 for (j = i + 1; j < palavras.size(); j++)
@@ -98,6 +120,8 @@ public QuerySemanticProcessor(Model tdbModel, String query){
                     }
                 }
             }
+
+
         }
     }
 
@@ -124,6 +148,7 @@ public QuerySemanticProcessor(Model tdbModel, String query){
                 Query query = QueryFactory.create(queryString);
                 QueryExecution qexec = QueryExecutionFactory.create(query, tdbModel);
                 ResultSet results = qexec.execSelect();
+                ResultSetFormatter.out(System.out,results,query);
 
                 // Entao e classe ou propriedade
                 if (results.hasNext())
@@ -133,13 +158,14 @@ public QuerySemanticProcessor(Model tdbModel, String query){
                     if (soln.get("x").asResource().getLocalName().toString().startsWith("has"))
                     {
                         palavras.add(toSearch);
-                        names.add(soln.get("x").asResource().getLocalName().toString());
+                        System.out.println(soln.get("x").asResource().getLocalName().toString());
                         means.add(PROPERTY);
                     }
                     else
                     {
                         palavras.add(toSearch);
                         names.add(soln.get("x").asResource().getLocalName().toString());
+
                         means.add(CLASS);
                     }
                     break;
@@ -149,6 +175,7 @@ public QuerySemanticProcessor(Model tdbModel, String query){
                 else
                 {
                     palavras.add(toSearch);
+
                     names.add("");
                     means.add(INSTANCE);
                 }
@@ -365,95 +392,83 @@ public QuerySemanticProcessor(Model tdbModel, String query){
     }
 
 
-    public static void findProps() {
+    public static void findProperties(String frase) {
         String queryString;
-        for (int i = 0; i < Search.termos.length; i++) {
-            if (Search.termos[i] != null && Search.termos[i].compareToIgnoreCase("no") != 0) {
-                queryString = prefixos + "SELECT ?x ?v WHERE { ?x rdfs:label ?v. FILTER regex(?v,\"" + Search.termos[i].toLowerCase() + "\",\"i\")}";
-                com.hp.hpl.jena.query.Query query = QueryFactory.create(queryString);
-                QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
-                ResultSet results = qExec.execSelect();
-                //ResultSetFormatter.out(System.out,results,query);
-                if (results.hasNext()) {
-                    String prop = Search.getTermination(results.next().getResource("?x").getURI());
-                    //System.out.println(termos[i]+" - "+prop);
-                    if (isSoloProp(i)) {
-                        Search.soloProps.put(prop, Search.termos[i]); //sendo soloprop ainda e uma condicao que o resultado final tem de ter, por isso n diminuo o terms
-                    } else {
-                        Search.properties.put(prop, i);
-                        Search.terms += 1;
-                    }
-                    Search.termos[i] = null;
+        queryString = prefixos;
+        queryString = queryString +"SELECT distinct ?property ?label WHERE {"+
+        "?subject ?property ?object."+
+        "?property rdfs:label ?label. FILTER regex(?label,\""+ frase +"\",\"i\")." +
+        "}";
+        com.hp.hpl.jena.query.Query query = QueryFactory.create(queryString);
+        QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
+        ResultSet results = qExec.execSelect();
+        //ResultSetFormatter.out(System.out,results,query);
+        if (results.hasNext()) {
+            String prop = Search.getTermination(results.next().getResource("?x").getURI());
+            //System.out.println(termos[i]+" - "+prop);
 
-                    //break; //so aceito a primeira prop, se for ambiguo
-                }
-            } else {
-                continue;
-            }
-            //ResultSetFormatter.out(System.out,results,query);
 
+            //break; //so aceito a primeira prop, se for ambiguo
         }
+
     }
 
-    public static boolean isSoloProp(int pos) {
-        String op = null;
-        String valor = null;
-        if (Search.termos.length < 3) {
-            return true;
-        }
-        if (Search.termos.length == 3 && pos == 1) {
-            return true;
-        }
-        if (pos == (Search.termos.length - 1) || pos == (Search.termos.length - 2)) {
-            if (Search.termos[pos - 1] != null && Search.termos[pos - 2] != null) {
-                if (Search.termos[pos - 1].compareToIgnoreCase("=") == 0 || Search.termos[pos - 1].compareToIgnoreCase("<") == 0 || Search.termos[pos - 1].compareToIgnoreCase(">") == 0) {
-                    return false;
-                }
-            }
-        } else if (pos == 0 || pos == 1) {
-            if (Search.termos[pos + 1] != null && Search.termos[pos + 2] != null) {
-                if (Search.termos[pos + 1].compareToIgnoreCase("=") == 0 || Search.termos[pos + 1].compareToIgnoreCase("<") == 0 || Search.termos[pos + 1].compareToIgnoreCase(">") == 0) {
-                    return false;
-                }
-            }
-        } else {
-            if (Search.termos[pos - 1] != null && Search.termos[pos - 2] != null) {
-                if (Search.termos[pos - 1].compareToIgnoreCase("=") == 0 || Search.termos[pos - 1].compareToIgnoreCase("<") == 0 || Search.termos[pos - 1].compareToIgnoreCase(">") == 0) {
-                    return false;
-                }
-            }
-            if (Search.termos[pos + 1] != null && Search.termos[pos + 2] != null) {
-                if (Search.termos[pos + 1].compareToIgnoreCase("=") == 0 || Search.termos[pos + 1].compareToIgnoreCase("<") == 0 || Search.termos[pos + 1].compareToIgnoreCase(">") == 0) {
-                    return false;
-                }
-            }
-        }
-        return true;
-
-    }//nokia os = windows os gps = yes gps 50 < height < 500
-
-
-    public static void findClass() {
+    public void findClasses( String sentence_part) {
+        sentence_part.replace("'s", "");
         String queryString;
-        for (int i = 0; i < Search.termos.length; i++) {//nao preciso de verificar por null pq e a primeira pesquisa
-            queryString = prefixos + "SELECT ?spot ?label WHERE { \n" //+?x rdfs:label ?v. FILTER regex(?v,\"" + termos[i].toLowerCase() + "\",\"i\")}";
-                    +"?category rdfs:subClassOf* project:Spot.\n"
-                    +"       ?spot rdf:type ?category.\n"
-                    +"      ?category rdfs:label ?label. FILTER regex(?label,\"" +Search.termos[i].toLowerCase()+ "\", \"i\")\n"
-                    +"}\n";
+        queryString = prefixos + "SELECT ?spot ?label WHERE { \n" //+?x rdfs:label ?v. FILTER regex(?v,\"" + termos[i].toLowerCase() + "\",\"i\")}";
+                +"?category rdfs:subClassOf* project:Spot.\n"
+                +"       ?spot rdf:type ?category.\n"
+                +"      ?category rdfs:label ?label. FILTER regex(?label,\"" +sentence_part.toLowerCase()+ "\", \"i\")\n"
+                +"}\n";
 
-            //System.out.println("querystring: "+queryString);
-            Query query = QueryFactory.create(queryString);
-            QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
-            ResultSet results = qExec.execSelect();
-            //ResultSetFormatter.out(System.out,results,query);
-            if (results.hasNext()) {
-                String temp = results.next().getResource("?spot").getProperty(RDF.type).getObject().toString();
-                Search.searchClass.add(temp);
-                Search.termos[i] = null;
-                break;
-            }
+        //System.out.println("querystring: "+queryString);
+        Query query = QueryFactory.create(queryString);
+        QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
+        ResultSet results = qExec.execSelect();
+        //ResultSetFormatter.out(System.out,results,query);
+        if (results.hasNext()) {
+            String temp = results.next().getResource("?spot").getProperty(RDF.type).getObject().toString();
+            //Search.searchClass.add(temp);
+            sentence.classes.add(temp);
         }
+    }
+    public void findMostSpecificClasses(Sentence sentence, String classe) {
+        //se existir palavras compostas, e for filha de alguma classe elimina a classe mae
+        //split -> da classe,
+            // if class != class[j]
+            // if parts[i] in sentence's classes
+                //ver  se uma é filha da outra
+    }
+
+    public void findInstances(Sentence sentence, String sentence_part) {
+       //se existir alguma instancia menos abrangente
+
+    }
+
+    public void findMostSpecificInstances(Sentence sentence, String sentence_part) {
+        //se for filha de alguma classe elimina a classe mae
+    }
+
+    public void findProperties(Sentence sentence, String sentence_part) {
+        String queryString;
+        queryString = prefixos + "SELECT ?spot ?label WHERE { \n" //+?x rdfs:label ?v. FILTER regex(?v,\"" + termos[i].toLowerCase() + "\",\"i\")}";
+                +"?category rdfs:subClassOf* project:Spot.\n"
+                +"       ?spot rdf:type ?category.\n"
+                +"      ?category rdfs:label ?label. FILTER regex(?label,\"" +sentence.sentence.toLowerCase()+ "\", \"i\")\n"
+                +"}\n";
+
+        //System.out.println("querystring: "+queryString);
+        Query query = QueryFactory.create(queryString);
+        QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
+        ResultSet results = qExec.execSelect();
+        //ResultSetFormatter.out(System.out,results,query);
+        if (results.hasNext()) {
+            String temp = results.next().getResource("?spot").getProperty(RDF.type).getObject().toString();
+            Search.searchClass.add(temp);
+            sentence.classes.add(temp);
+        }
+
     }
 
     public static int getPairValue(Map.Entry pair){
