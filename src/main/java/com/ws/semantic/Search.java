@@ -223,8 +223,23 @@ public class Search {
         for(String part : s.split(" "))
             qp.findClasses(part);
 
-        System.out.println("DEBUG:");
+        System.out.println("Find CLasses:");
         for(String part : qp.sentence.classes)
+            System.out.println(part);
+
+        for(String part : s.split(" "))
+            qp.findProperties(part);
+
+        System.out.println("Find properties:");
+        for(String prop : qp.sentence.properties)
+            System.out.println(prop);
+
+
+        for(String part : s.split(" "))
+            qp.findInstancesByName(part);
+
+        System.out.println("Find instances by name:");
+        for(String part : qp.sentence.instances)
             System.out.println(part);
 
         return;

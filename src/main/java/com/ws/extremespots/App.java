@@ -21,7 +21,7 @@ public class App extends Object {
 
 
         Search s = new Search();
-        String query = "portuguese restaurant";
+        String query = "portuguese restaurant name";
         s.search(query);
         // System.out.println(s.getResults());
 

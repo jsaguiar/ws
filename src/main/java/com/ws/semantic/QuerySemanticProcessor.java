@@ -48,11 +48,11 @@ public class QuerySemanticProcessor {
     String userQuestion = "";
     int foundPrint = 0;
 
-public QuerySemanticProcessor(Model tdbModel, String query){
+    public QuerySemanticProcessor(Model tdbModel, String query){
         this.tdbModel = tdbModel;
         separate = query.split(" ");
         sentence = new Sentence(query);
-}
+    }
 
     public void detect_words(){
         int i;
@@ -182,44 +182,6 @@ public QuerySemanticProcessor(Model tdbModel, String query){
             }
         }
     }
-
-
-
-    public static String[] findQuotations(String searchInput) {
-        String[] cleanQuery, auxQuery, tempQuery;
-        String aux = "";
-        int i, j = 0;
-        tempQuery = searchInput.split(" ");
-        auxQuery = new String[tempQuery.length];
-        for (i = 0; i < tempQuery.length;) {
-            if (tempQuery[i].startsWith("\"")) {
-                aux += tempQuery[i].substring(1);
-                i += 1;
-                for (; i < tempQuery.length; i++) {
-                    if (tempQuery[i].endsWith("\"")) {
-                        aux += " " + tempQuery[i].substring(0, tempQuery[i].length() - 1);
-                        auxQuery[j] = aux;
-                        j += 1;
-                        aux = "";
-                        break;
-                    } else {
-                        aux += " " + tempQuery[i];
-                    }
-                }
-                i += 1;
-            } else {
-                auxQuery[j] = tempQuery[i];
-                i += 1;
-                j += 1;
-            }
-        }
-        cleanQuery = new String[j];
-        for (i = 0; i < j; i++) {
-            cleanQuery[i] = auxQuery[i];
-        }
-        return cleanQuery;
-    }
-
 
 
 
@@ -392,20 +354,21 @@ public QuerySemanticProcessor(Model tdbModel, String query){
     }
 
 
-    public static void findProperties(String frase) {
+    public void findProperties(String frase) {
         String queryString;
         queryString = prefixos;
         queryString = queryString +"SELECT distinct ?property ?label WHERE {"+
-        "?subject ?property ?object."+
-        "?property rdfs:label ?label. FILTER regex(?label,\""+ frase +"\",\"i\")." +
-        "}";
+                "?subject ?property ?object."+
+                "?property rdfs:label ?label. FILTER regex(?label,\""+ frase +"\",\"i\")." +
+                "}";
         com.hp.hpl.jena.query.Query query = QueryFactory.create(queryString);
         QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
         ResultSet results = qExec.execSelect();
         //ResultSetFormatter.out(System.out,results,query);
         if (results.hasNext()) {
-            String prop = Search.getTermination(results.next().getResource("?x").getURI());
+            String prop = Search.getTermination(results.next().getResource("?property").getURI());
             //System.out.println(termos[i]+" - "+prop);
+            sentence.properties.add(prop);
 
 
             //break; //so aceito a primeira prop, se for ambiguo
@@ -414,7 +377,6 @@ public QuerySemanticProcessor(Model tdbModel, String query){
     }
 
     public void findClasses( String sentence_part) {
-        sentence_part.replace("'s", "");
         String queryString;
         queryString = prefixos + "SELECT ?spot ?label WHERE { \n" //+?x rdfs:label ?v. FILTER regex(?v,\"" + termos[i].toLowerCase() + "\",\"i\")}";
                 +"?category rdfs:subClassOf* project:Spot.\n"
@@ -436,15 +398,53 @@ public QuerySemanticProcessor(Model tdbModel, String query){
     public void findMostSpecificClasses(Sentence sentence, String classe) {
         //se existir palavras compostas, e for filha de alguma classe elimina a classe mae
         //split -> da classe,
-            // if class != class[j]
-            // if parts[i] in sentence's classes
-                //ver  se uma é filha da outra
+        // if class != class[j]
+        // if parts[i] in sentence's classes
+        //ver  se uma é filha da outra
     }
 
-    public void findInstances(Sentence sentence, String sentence_part) {
-       //se existir alguma instancia menos abrangente
+    public void findInstances(String sentence_part) {
+        //se existir alguma instancia menos abrangente
+        String queryString;
+        queryString = prefixos + "SELECT ?spot ?label WHERE { \n"
+                +"?category rdfs:subClassOf* project:Spot.\n"
+                +"       ?spot rdf:type ?category.\n"
+                +"      ?category rdfs:label ?label. FILTER regex(?label,\"" +sentence_part.toLowerCase()+ "\", \"i\")\n"
+                +"}\n";
+
+        //System.out.println("querystring: "+queryString);
+        Query query = QueryFactory.create(queryString);
+        QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
+        ResultSet results = qExec.execSelect();
+        //ResultSetFormatter.out(System.out,results,query);
+        if (results.hasNext()) {
+            String temp = results.next().getResource("?spot").getURI();
+            sentence.instances.add(temp);
+        }
+
 
     }
+
+
+    public void findInstancesByName(String sentence_part) {
+        String queryString;
+        queryString = prefixos + "SELECT ?spot ?label WHERE { \n" //+?x rdfs:label ?v. FILTER regex(?v,\"" + termos[i].toLowerCase() + "\",\"i\")}";
+                +"?category rdfs:subClassOf* project:Spot.\n"
+                +"       ?spot rdf:type ?category.\n"
+                +"      ?spot project:HasName ?label. FILTER regex(?label,\"" +sentence_part.toLowerCase()+ "\", \"i\")\n"
+                +"}\n";
+
+        //System.out.println("querystring: "+queryString);
+        Query query = QueryFactory.create(queryString);
+        QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
+        ResultSet results = qExec.execSelect();
+        //ResultSetFormatter.out(System.out,results,query);
+        if (results.hasNext()) {
+            String temp = results.next().getResource("?spot").getURI();
+            sentence.instances.add(temp);
+        }
+    }
+
 
     public void findMostSpecificInstances(Sentence sentence, String sentence_part) {
         //se for filha de alguma classe elimina a classe mae
@@ -481,7 +481,7 @@ public QuerySemanticProcessor(Model tdbModel, String query){
         inputQuery = prefixos + "SELECT distinct ?spot WHERE { \n";
         for(String classe : Search.searchClass){
             inputQuery = inputQuery + "?category rdfs:subClassOf* <"+classe+">.\n"
-            + "?spot rdf:type ?category.\n";
+                    + "?spot rdf:type ?category.\n";
         }
         inputQuery = inputQuery + "}\n";
         Query query;
