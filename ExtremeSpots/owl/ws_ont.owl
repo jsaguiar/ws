@@ -51,6 +51,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasAddress -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasAddress">
+        <rdfs:label>address</rdfs:label>
+    </DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasCloseHourSaturday -->
 
     <DatatypeProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasCloseHourSaturday">
@@ -163,6 +171,14 @@
         <rdfs:label>price</rdfs:label>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#Spot"/>
         <rdfs:range rdf:resource="&xsd;short"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasRating -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/joao/ontologies/2013/10/POIs#HasRating">
+        <rdfs:label>rating</rdfs:label>
     </DatatypeProperty>
     
 
