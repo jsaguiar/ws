@@ -3,6 +3,7 @@ package com.ws.semantic;
 
 import java.util.*;
 
+import com.google.gson.Gson;
 import com.hp.hpl.jena.query.*;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -211,7 +212,7 @@ public class Search {
         }
     }
 
-    public void search(String s) {
+    public String search(String s) {
 
 
         //QuerySemanticProcessor
@@ -267,17 +268,38 @@ public class Search {
 
         //TreeMap<Resource,Integer> sorted_map = new TreeMap<Resource,Integer>(resultados);
 
+        System.out.println(s);
         for(Map.Entry<Resource, Integer> entry : resultados.entrySet()) {
             Resource key = entry.getKey();
             Integer value = entry.getValue();
-            System.out.println(key);
-            System.out.println(value);
+            if (key!=null){
+
+                //System.out.println(key);
+                //System.out.println(value);
+                qp.getMapPointFromSparql(key.getURI());
+
+            }
+            //
 
             // do what you have to do here
             // In your case, an other loop.
         }
 
-        return;
+        List<MapPoint> mapPoints = qp.mapPoints;
+        String arrayString = new Gson().toJson(mapPoints );
+
+        HashMap bindings = new HashMap();
+        bindings.put("bindings", arrayString);
+        String bindingsString = new Gson().toJson(bindings );
+
+
+        HashMap results = new HashMap();
+        results.put("results", bindingsString);
+
+        return new Gson().toJson(results );
+
+
+
     }
 
 

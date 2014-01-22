@@ -22,7 +22,7 @@ public class App extends Object {
 
         Search s = new Search();
         String query = "portuguese restaurant name is silva";
-        s.search(query);
+        System.out.println(s.search(query));
         // System.out.println(s.getResults());
 
     }

@@ -81,6 +81,17 @@ public class Parser {
                 .addProperty(RDF.type, ontModel.getProperty(namespace+refactor_spot_category(category)));
 
 
+
+        if(poi.price!=null){
+            spot.addProperty(ontModel.getProperty(namespace+"HasPrice"), (String)poi.price.get("tier"));
+        }else{
+            spot.addProperty(ontModel.getProperty(namespace+"HasPrice"), "-1");
+        }
+        if(poi.rating!=null){
+            spot.addProperty(ontModel.getProperty(namespace+"HasRating"), ""+poi.rating);
+        }else{
+            spot.addProperty(ontModel.getProperty(namespace+"HasRating"), "-1");
+        }
         if(poi.name!=null){
             spot.addProperty(ontModel.getProperty(namespace+"HasName"), poi.name);
         }

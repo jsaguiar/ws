@@ -32,15 +32,15 @@ public class Location {
 
     public String getLocation(){
         String out = "";
-        if(address.isEmpty()){
+        if(address!=null&&!address.isEmpty()){
            out = out +" "+address;
-        }if(city.isEmpty()){
+        }if(city!=null&&!city.isEmpty()){
             out = out +" "+city;
-        }if(postalCode.isEmpty()){
+        }if(postalCode!=null&&!postalCode.isEmpty()){
             out = out +" "+postalCode;
-        }if(state.isEmpty()){
+        }if(state!=null&&!state.isEmpty()){
             out = out +" "+state;
-        }if(country.isEmpty()){
+        }if(country!=null&&!country.isEmpty()){
             out = out +" "+country;
         }
         return out;

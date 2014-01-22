@@ -20,6 +20,8 @@ import java.util.Set;
  */
 public class QuerySemanticProcessor {
 
+    public ArrayList<MapPoint> mapPoints;
+
 
     private static final int PROPERTY = 0;
     private static final int CLASS = 1;
@@ -52,6 +54,7 @@ public class QuerySemanticProcessor {
         this.tdbModel = tdbModel;
         separate = query.split(" ");
         sentence = new Sentence(query);
+        mapPoints = new ArrayList<MapPoint>();
     }
 
     public void detect_words(){
@@ -542,21 +545,39 @@ public class QuerySemanticProcessor {
 
     }
 
-    public void spotHasJson(String spot_uri) {
+
+    public void getMapPointFromSparql(String spot_uri) {
         String queryString;
-        queryString = prefixos + "SELECT * WHERE { \n"
-                +"<"+spot_uri+">" +   "?prop ?val" +
-                "}\n";
+
+        queryString = prefixos + "SELECT ?name ?id ?lat ?lng ?description ?address ?price ?rating WHERE { "
+                + "<"+spot_uri+"> project:HasId  ?id . "
+                + "<"+spot_uri+"> project:HasName ?name."
+                + "<"+spot_uri+"> project:HasLat ?lat."
+                + "<"+spot_uri+"> project:HasLng ?lng."
+                +"OPTIONAL{ <"+spot_uri+"> project:HasDescription ?desc. ?desc rdfs:label ?description.}"
+                + "<"+spot_uri+"> project:HasPrice ?price."
+                + "<"+spot_uri+"> project:HasPrice ?address."
+                + "<"+spot_uri+"> project:HasRating ?rating."
+                +"}\n";
 
         //System.out.println("querystring: "+queryString);
         Query query = QueryFactory.create(queryString);
         QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
         ResultSet results = qExec.execSelect();
-        ResultSetFormatter.out(System.out,results,query);
+
+        //ResultSetFormatter.outputAsJSON(outStream,results);
+        //System.out.println(results.g);
         if (results.hasNext()) {
-            String temp = results.next().getResource("?spot").getProperty(RDF.type).getObject().toString();
-            Search.searchClass.add(temp);
-            sentence.classes.add(temp);
+            QuerySolution next = results.next();
+            String id = next.getLiteral("?id").toString();
+            String name = next.getLiteral("?name").toString();
+            String lat = next.getLiteral("?lat").toString();
+            String lng = next.getLiteral("?lng").toString();
+            String description = next.getLiteral("?description").toString();
+            String price = next.getLiteral("?price").toString();
+            String address = next.getLiteral("?address").toString();
+            String rating = next.getLiteral("?rating").toString();
+            mapPoints.add(new MapPoint(id, name,lat, lng, description, price, address, rating));
         }
 
     }
