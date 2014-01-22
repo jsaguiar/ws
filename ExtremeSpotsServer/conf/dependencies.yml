@@ -1,0 +1,24 @@
+# Application dependencies
+
+require:
+    - play 1.2
+    - com.google.guava -> guava r07:
+        transitive: false
+    - commons-lang 3.0:
+        force: true
+    - com.zenexity -> sso 1.0
+    - play -> log4play 0.5
+    - play -> betterlogs 1.0
+    - com.google.code.gson -> gson 2.2.4
+    - org.apache.jena -> apache-jena-libs 2.11.0
+    - commons-io -> commons-io 2.4
+    - org.apache.jena -> jena-fuseki 0.2.7
+
+# My custom repositories
+repositories:
+
+    - zenexity:
+        type:       http
+        artifact:   "http://www.zenexity.com/repo/[module]-[revision].[ext]"
+        contains:
+            - com.zenexity -> *
