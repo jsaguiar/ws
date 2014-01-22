@@ -30,6 +30,22 @@ public class Location {
         this.country = country;
     }
 
+    public String getLocation(){
+        String out = "";
+        if(address.isEmpty()){
+           out = out +" "+address;
+        }if(city.isEmpty()){
+            out = out +" "+city;
+        }if(postalCode.isEmpty()){
+            out = out +" "+postalCode;
+        }if(state.isEmpty()){
+            out = out +" "+state;
+        }if(country.isEmpty()){
+            out = out +" "+country;
+        }
+        return out;
+    }
+
     public String getAddress() {
         return address;
     }

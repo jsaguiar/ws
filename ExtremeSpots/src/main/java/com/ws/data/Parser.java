@@ -67,6 +67,13 @@ public class Parser {
 
         return aux;
     }
+
+    //address
+
+    //price
+    //rating
+    //
+
     private void addPointOfInterest(PointOfInterest poi){
         String category =  (poi.categories.get(0).getName());
         String category_id = poi.categories.get(0).getId();
@@ -78,6 +85,9 @@ public class Parser {
             spot.addProperty(ontModel.getProperty(namespace+"HasName"), poi.name);
         }
 
+        if(!poi.location.getLocation().isEmpty()){
+            spot.addProperty(ontModel.getProperty(namespace+"HasAddress"), poi.location.getLocation());
+        }
         if(poi.contact.phone!=null)
             spot.addProperty(ontModel.getProperty(namespace+"HasContact"), poi.contact.phone);
 
