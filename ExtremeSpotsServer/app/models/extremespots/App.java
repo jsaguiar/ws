@@ -1,8 +1,11 @@
 package models.extremespots;
 
 
+import models.semantic.MapPoint;
 import models.semantic.Search;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /*
@@ -19,10 +22,14 @@ public class App extends Object {
 
 
 
+        Path currentRelativePath = Paths.get("");
+        String s2 = currentRelativePath.toAbsolutePath().toString();
+        System.out.println("Current relative path is: " + s2);
 
         Search s = new Search();
         String query = "portuguese restaurant name is silva";
-        s.search(query);
+        ArrayList<MapPoint> arr = s.search(query);
+        System.out.println(arr.get(0).toString());
         // System.out.println(s.getResults());
 
     }

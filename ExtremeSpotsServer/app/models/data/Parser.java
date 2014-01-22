@@ -67,6 +67,13 @@ public class Parser {
 
         return aux;
     }
+
+    //address
+
+    //price
+    //rating
+    //
+
     private void addPointOfInterest(PointOfInterest poi){
         String category =  (poi.categories.get(0).getName());
         String category_id = poi.categories.get(0).getId();
@@ -74,10 +81,24 @@ public class Parser {
                 .addProperty(RDF.type, ontModel.getProperty(namespace+refactor_spot_category(category)));
 
 
+
+        if(poi.price!=null){
+            spot.addProperty(ontModel.getProperty(namespace+"HasPrice"), (String)poi.price.get("tier"));
+        }else{
+            spot.addProperty(ontModel.getProperty(namespace+"HasPrice"), "-1");
+        }
+        if(poi.rating!=null){
+            spot.addProperty(ontModel.getProperty(namespace+"HasRating"), ""+poi.rating);
+        }else{
+            spot.addProperty(ontModel.getProperty(namespace+"HasRating"), "-1");
+        }
         if(poi.name!=null){
             spot.addProperty(ontModel.getProperty(namespace+"HasName"), poi.name);
         }
 
+        if(!poi.location.getLocation().isEmpty()){
+            spot.addProperty(ontModel.getProperty(namespace+"HasAddress"), poi.location.getLocation());
+        }
         if(poi.contact.phone!=null)
             spot.addProperty(ontModel.getProperty(namespace+"HasContact"), poi.contact.phone);
 

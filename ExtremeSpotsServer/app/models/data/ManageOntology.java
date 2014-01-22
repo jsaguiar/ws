@@ -17,6 +17,8 @@ public class ManageOntology {
             Model model = ModelFactory.createDefaultModel();
             InputStream in = FileManager.get().open(StaticVariables.owl_file);
 
+            System.out.println("olaaaaa");
+
             if(in == null){
                 throw new IllegalArgumentException("File not found");
             }

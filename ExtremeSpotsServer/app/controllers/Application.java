@@ -22,9 +22,13 @@ public class Application extends Controller {
     public static Result semanticsearch(String query) {
 
         Search s = new Search();
-        s.search(query);
-//        return ok(s.resultsHasJson());
-        return ok(toJson(query));
+        return ok(toJson(s.search(query)));
+
+    }
+    public static Result recomendation(String query) {
+
+        Search s = new Search();
+        return ok(toJson(s.search(query)));
 
     }
 

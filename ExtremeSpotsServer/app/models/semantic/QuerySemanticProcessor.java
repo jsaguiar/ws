@@ -5,7 +5,6 @@ import com.hp.hpl.jena.query.*;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDF;
-import play.Logger;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,6 +19,8 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class QuerySemanticProcessor {
+
+    public ArrayList<MapPoint> mapPoints;
 
 
     private static final int PROPERTY = 0;
@@ -53,6 +54,7 @@ public class QuerySemanticProcessor {
         this.tdbModel = tdbModel;
         separate = query.split(" ");
         sentence = new Sentence(query);
+        mapPoints = new ArrayList<MapPoint>();
     }
 
     public void detect_words(){
@@ -526,14 +528,8 @@ public class QuerySemanticProcessor {
             qExec = QueryExecutionFactory.create(query, Search.tdbModel);
             results = qExec.execSelect();
 
-            ResultSetFormatter.outputAsJSON(results);
-
-                System.out.println(results.toString());
-                Logger.debug("The param was %s", results.toString());
-
-                int count = 0;
-
-            //ResultSetFormatter.out(System.out, results, query);
+            int count = 0;
+                //ResultSetFormatter.out(System.out, results, query);
 
             while (results.hasNext()) {
                 QuerySolution qs = results.next();
@@ -545,6 +541,43 @@ public class QuerySemanticProcessor {
                 System.out.println(sparqlQuery);
                 return;
             }
+        }
+
+    }
+
+
+    public void getMapPointFromSparql(String spot_uri) {
+        String queryString;
+
+        queryString = prefixos + "SELECT ?name ?id ?lat ?lng ?description ?address ?price ?rating WHERE { "
+                + "<"+spot_uri+"> project:HasId  ?id . "
+                + "<"+spot_uri+"> project:HasName ?name."
+                + "<"+spot_uri+"> project:HasLat ?lat."
+                + "<"+spot_uri+"> project:HasLng ?lng."
+                +"OPTIONAL{ <"+spot_uri+"> project:HasDescription ?desc. ?desc rdfs:label ?description.}"
+                + "<"+spot_uri+"> project:HasPrice ?price."
+                + "<"+spot_uri+"> project:HasPrice ?address."
+                + "<"+spot_uri+"> project:HasRating ?rating."
+                +"}\n";
+
+        //System.out.println("querystring: "+queryString);
+        Query query = QueryFactory.create(queryString);
+        QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
+        ResultSet results = qExec.execSelect();
+
+        //ResultSetFormatter.outputAsJSON(outStream,results);
+        //System.out.println(results.g);
+        if (results.hasNext()) {
+            QuerySolution next = results.next();
+            String id = next.getLiteral("?id").toString();
+            String name = next.getLiteral("?name").toString();
+            String lat = next.getLiteral("?lat").toString();
+            String lng = next.getLiteral("?lng").toString();
+            String description = next.getLiteral("?description").toString();
+            String price = next.getLiteral("?price").toString();
+            String address = next.getLiteral("?address").toString();
+            String rating = next.getLiteral("?rating").toString();
+            mapPoints.add(new MapPoint(id, name,lat, lng, description, price, address, rating));
         }
 
     }

@@ -4,6 +4,7 @@ package models.semantic;
 import java.util.*;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.hp.hpl.jena.query.*;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -212,7 +213,7 @@ public class Search {
         }
     }
 
-    public void search(String s) {
+    public ArrayList<MapPoint> search(String s) {
 
 
         //QuerySemanticProcessor
@@ -268,43 +269,43 @@ public class Search {
 
         //TreeMap<Resource,Integer> sorted_map = new TreeMap<Resource,Integer>(resultados);
 
+        System.out.println(s);
         for(Map.Entry<Resource, Integer> entry : resultados.entrySet()) {
             Resource key = entry.getKey();
             Integer value = entry.getValue();
-            System.out.println(key);
-            System.out.println(value);
+            if (key!=null){
+
+                //System.out.println(key);
+                //System.out.println(value);
+                qp.getMapPointFromSparql(key.getURI());
+
+            }
+            //
 
             // do what you have to do here
             // In your case, an other loop.
         }
 
+//        Gson gson = new GsonBuilder().disableHtmlEscaping().create();
+//
+//        List<MapPoint> mapPoints = qp.mapPoints;
+//        String arrayString = gson.toJson(mapPoints );
+//
+//        HashMap bindings = new HashMap();
+//        bindings.put("bindings", arrayString);
+//        String bindingsString = gson.toJson(bindings );
+//
+//
+//        HashMap results = new HashMap();
+//        results.put("results", bindingsString);
+
+        return qp.mapPoints;
 
 
 
-
-
-        return;
     }
 
 
-    public String resultsHasJson(){
-
-        List<Map.Entry<Resource, Integer>> entries = new ArrayList<Map.Entry<Resource, Integer>>(resultados.entrySet());
-        Collections.sort(entries, new Comparator<Map.Entry<Resource, Integer>>() {
-            public int compare(Map.Entry<Resource, Integer> left, Map.Entry<Resource, Integer> right) {
-                return left.getValue().compareTo(right.getValue());
-            }
-        });
-
-
-        ArrayList<String> out = new ArrayList<String>();
-
-        for (Map.Entry<Resource, Integer> entry:entries){
-            out.add(entry.getKey().toString());
-        }
-        return new Gson().toJson(out);
-
-    }
 
 
     public void contructFinalQuery(QuerySemanticProcessor qp){
