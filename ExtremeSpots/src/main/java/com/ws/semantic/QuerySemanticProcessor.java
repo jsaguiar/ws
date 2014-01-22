@@ -524,9 +524,9 @@ public class QuerySemanticProcessor {
             query = QueryFactory.create(sparqlQuery);
             qExec = QueryExecutionFactory.create(query, Search.tdbModel);
             results = qExec.execSelect();
-            int count = 0;
 
-            //ResultSetFormatter.out(System.out, results, query);
+            int count = 0;
+                //ResultSetFormatter.out(System.out, results, query);
 
             while (results.hasNext()) {
                 QuerySolution qs = results.next();
@@ -538,6 +538,25 @@ public class QuerySemanticProcessor {
                 System.out.println(sparqlQuery);
                 return;
             }
+        }
+
+    }
+
+    public void spotHasJson(String spot_uri) {
+        String queryString;
+        queryString = prefixos + "SELECT * WHERE { \n"
+                +"<"+spot_uri+">" +   "?prop ?val" +
+                "}\n";
+
+        //System.out.println("querystring: "+queryString);
+        Query query = QueryFactory.create(queryString);
+        QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
+        ResultSet results = qExec.execSelect();
+        ResultSetFormatter.out(System.out,results,query);
+        if (results.hasNext()) {
+            String temp = results.next().getResource("?spot").getProperty(RDF.type).getObject().toString();
+            Search.searchClass.add(temp);
+            sentence.classes.add(temp);
         }
 
     }
