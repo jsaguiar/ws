@@ -22,10 +22,6 @@ public class App extends Object {
 
 
 
-        Path currentRelativePath = Paths.get("");
-        String s2 = currentRelativePath.toAbsolutePath().toString();
-        System.out.println("Current relative path is: " + s2);
-
         Search s = new Search();
         String query = "portuguese restaurant name is silva";
         ArrayList<MapPoint> arr = s.search(query);

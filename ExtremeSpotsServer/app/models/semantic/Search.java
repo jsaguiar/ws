@@ -213,7 +213,7 @@ public class Search {
         }
     }
 
-    public ArrayList<MapPoint> search(String s) {
+    public ArrayList<MapPoint> searchRecomendation(String s) {
 
 
         //QuerySemanticProcessor
@@ -306,6 +306,86 @@ public class Search {
     }
 
 
+    public String removeWords(String query, ArrayList<String> words){
+        for (String word : words){
+            query = query.replaceFirst(word,"");
+        }
+        return query;
+    }
+
+    public ArrayList<MapPoint> search(String s) {
+
+        QuerySemanticProcessor qp = new QuerySemanticProcessor(tdbModel,s);
+
+        String beforeProperties= s;
+
+        for(String part : beforeProperties.split(" "))
+            if (!part.isEmpty())
+                qp.findProperties(part);
+
+
+        System.out.println("before size");
+        System.out.println(qp.sentence.classes.size());
+        String beforeClasses= removeWords(beforeProperties, qp.sentence.propertiesQueryWord);
+
+        for(String part : beforeClasses.split(" ")){
+            if (!part.isEmpty())
+                qp.findClasses(part);
+        }
+
+
+        System.out.println("after size");
+        System.out.println(qp.sentence.classes.size());
+
+        String beforeInstances = removeWords(beforeClasses, qp.sentence.classesQueryWord);
+
+        for(String part : beforeInstances.split(" "))
+            if (!part.isEmpty())
+                qp.findInstancesByName(part);
+
+        String beforeFinal = removeWords(beforeInstances, qp.sentence.instancesQueryWord);
+
+
+        qp.sentence.createSearchQuery(beforeFinal);
+
+
+        System.out.println("beforeProperties");
+        System.out.println(beforeProperties);
+        System.out.println("beforeClasses");
+        System.out.println(beforeClasses);
+        System.out.println("beforeInstances");
+        System.out.println(beforeInstances);
+        System.out.println("beforeFinal");
+        System.out.println(beforeFinal);
+
+        if(qp.sentence.queries.size()>0){
+            qp.runQueries();
+
+        }
+        System.out.println("***********************************");
+
+        System.out.println("after all size");
+        System.out.println(qp.sentence.classes.size());
+
+        System.out.println(s);
+        for(Map.Entry<Resource, Integer> entry : resultados.entrySet()) {
+            Resource key = entry.getKey();
+            Integer value = entry.getValue();
+            if (key!=null){
+
+                //System.out.println(key);
+                //System.out.println(value);
+                qp.getMapPointFromSparql(key.getURI());
+
+            }
+        }
+
+
+        return qp.mapPoints;
+
+
+
+    }
 
 
     public void contructFinalQuery(QuerySemanticProcessor qp){

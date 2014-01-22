@@ -38,17 +38,10 @@ public class QuerySemanticProcessor {
 
     private Model tdbModel;
     private String[] separate;
-    //private ArrayList<Counted> counts;
-    ArrayList<String> palavras = new ArrayList<String>();
-    ArrayList<Integer> means = new ArrayList<Integer>();
-    ArrayList<String> names = new ArrayList<String>();
-    //ArrayList<Return> resultsList = new ArrayList<Return>();
 
 
     public Sentence sentence;
 
-    String userQuestion = "";
-    int foundPrint = 0;
 
     public QuerySemanticProcessor(Model tdbModel, String query){
         this.tdbModel = tdbModel;
@@ -57,134 +50,6 @@ public class QuerySemanticProcessor {
         mapPoints = new ArrayList<MapPoint>();
     }
 
-    public void detect_words(){
-        int i;
-
-
-        // Divide a frase nas suas partes
-        checker();
-
-        // Apaga instancias que estejam a mais
-        deleteFalseInstances();
-
-        // DEBUG PRINT
-
-        for (i = 0; i < palavras.size(); i++)
-        {
-            System.out.println(palavras.get(i) + " " + means.get(i));
-        }
-
-        for (String part :palavras){
-            sentence.sentence = sentence.sentence+palavras;
-        }
-
-    }
-
-
-    public void deleteFalseInstances()
-    {
-        int i, j;
-        for (i = 0; i < palavras.size(); i++)
-        {
-
-            if (means.get(i) == CLASS)
-            {
-                System.out.println("asdassdas");
-                for (j = i + 1; j < palavras.size(); j++)
-                {
-                    if (palavras.get(i).contains(palavras.get(j)) && means.get(j) == CLASS )
-                    {
-                        palavras.remove(i);
-                        means.remove(i);
-                        names.remove(i);
-                        i--;
-                    } else if (palavras.get(j).contains(palavras.get(i)) && means.get(j) == CLASS )
-                    {
-                        palavras.remove(j);
-                        means.remove(j);
-                        names.remove(j);
-                    }else{
-                        break;
-                    }
-                }
-            }
-
-            if (means.get(i) == INSTANCE)
-            {
-                for (j = i + 1; j < palavras.size(); j++)
-                {
-                    if (palavras.get(i).contains(palavras.get(j)) && (means.get(j) == PROPERTY || means.get(j) == CLASS))
-                    {
-                        palavras.remove(i);
-                        means.remove(i);
-                        names.remove(i);
-                        i--;
-                        break;
-                    }
-                }
-            }
-
-
-        }
-    }
-
-    // Verifica o que representa cada termo da pesquisa
-    public void checker()
-    {
-        int i, j;
-        String queryString = "";
-        String toSearch = "";
-
-        for (i = 0; i < separate.length; i++)
-        {
-            for (j = i; j < separate.length; j++)
-            {
-                if (i == j)
-                    toSearch = separate[i];
-
-                else
-                    toSearch = toSearch.concat(" ").concat(separate[j]);
-
-                queryString = prefixos + "SELECT DISTINCT ?x ?type " + "WHERE { ?x rdfs:label ?label . " + " ?x rdf:type ?type . " + "FILTER(?label='"
-                        + toSearch + "'^^<http://www.w3.org/2001/XMLSchema#string>) " + ".}";
-
-                Query query = QueryFactory.create(queryString);
-                QueryExecution qexec = QueryExecutionFactory.create(query, tdbModel);
-                ResultSet results = qexec.execSelect();
-                ResultSetFormatter.out(System.out,results,query);
-
-                // Entao e classe ou propriedade
-                if (results.hasNext())
-                {
-                    QuerySolution soln = results.nextSolution();
-
-                    if (soln.get("x").asResource().getLocalName().toString().startsWith("has"))
-                    {
-                        palavras.add(toSearch);
-                        System.out.println(soln.get("x").asResource().getLocalName().toString());
-                        means.add(PROPERTY);
-                    }
-                    else
-                    {
-                        palavras.add(toSearch);
-                        names.add(soln.get("x").asResource().getLocalName().toString());
-
-                        means.add(CLASS);
-                    }
-                    break;
-                }
-
-                // Nao e classe nem propriedade
-                else
-                {
-                    palavras.add(toSearch);
-
-                    names.add("");
-                    means.add(INSTANCE);
-                }
-            }
-        }
-    }
 
 
 
@@ -269,7 +134,7 @@ public class QuerySemanticProcessor {
         }
         if (Search.termos[getPairValue(pair) + 1] != null && Search.termos[getPairValue(pair) + 2] != null) {
             if (Search.termos[getPairValue(pair) + 1].compareToIgnoreCase("=") == 0 || Search.termos[getPairValue(pair) + 1].compareToIgnoreCase("<") == 0 || Search.termos[getPairValue(pair) + 1].compareToIgnoreCase(">") == 0) {
-                //se encontrar tenho de por nos termos a propriedade, valor e operacao a null para nao serem pesquisados novamente
+                //se encontrar temos de por nos termos a propriedade, valor e operacao a null para nao serem pesquisados novamente
                 valor = Search.termos[getPairValue(pair) + 2];
                 Search.termos[getPairValue(pair) + 2] = null;
                 op = Search.termos[getPairValue(pair) + 1];
@@ -387,7 +252,7 @@ public class QuerySemanticProcessor {
                 +"      ?category rdfs:label ?label. FILTER regex(?label,\"\\\\b" +sentence_part.toLowerCase()+ "\", \"i\")\n"
                 +"}\n";
 
-        //System.out.println("querystring: "+queryString);
+        System.out.println("querystring findClasses: "+queryString);
         Query query = QueryFactory.create(queryString);
         QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
         ResultSet results = qExec.execSelect();
@@ -406,27 +271,6 @@ public class QuerySemanticProcessor {
         //ver  se uma é filha da outra
     }
 
-    public void findInstances(String sentence_part) {
-        //se existir alguma instancia menos abrangente
-        String queryString;
-        queryString = prefixos + "SELECT ?spot ?label WHERE { \n"
-                +"?category rdfs:subClassOf* project:Spot.\n"
-                +"       ?spot rdf:type ?category.\n"
-                +"      ?category rdfs:label ?label. FILTER regex(?label,\"\\\\b" +sentence_part.toLowerCase()+ "\", \"i\")\n"
-                +"}\n";
-
-        //System.out.println("querystring: "+queryString);
-        Query query = QueryFactory.create(queryString);
-        QueryExecution qExec = QueryExecutionFactory.create(query, Search.tdbModel);
-        ResultSet results = qExec.execSelect();
-        //ResultSetFormatter.out(System.out,results,query);
-        while(results.hasNext()) {
-            String temp = results.next().getResource("?spot").getURI();
-            sentence.addInstance(temp, sentence_part);
-        }
-
-
-    }
 
 
     public void findInstancesByName(String sentence_part) {
@@ -509,11 +353,6 @@ public class QuerySemanticProcessor {
     }
 
 
-    public boolean is_this_a_mult_word_class(String last_word, String current_word)
-    {
-        return false;
-
-    }
 
     public void runQueries(){
 

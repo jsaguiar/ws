@@ -62,6 +62,17 @@ public class Sentence {
         instances.add(the_instance);
     }
 
+    public void searchQueries(){
+        for (int i =0;i<classes.size();i++){
+            createQuery(i,-1,-1);
+            for (int j =0;j<properties.size();j++){
+                createQuery(i,j,-1);
+                for (int k =0;k<instances.size();k++){
+                    createQuery(i,j,k);
+                }
+            }
+        }
+    }
 
     public void createQueries(){
         for (int i =0;i<classes.size();i++){
@@ -147,5 +158,47 @@ public class Sentence {
         queries.add(inputQuery);
 
 
+    }
+
+    public void createSearchQuery(String query_other_parts){
+
+        String inputQuery ="";
+
+        String spot ="";
+        inputQuery = prefixos + "SELECT distinct ?spot WHERE { \n OPTIONAL{";
+
+        for(String the_class : classes){
+            System.out.println("the_class");
+            System.out.println(the_class);
+            spot = "?spot";
+            inputQuery = inputQuery +"OPTIONAL{" + "?category rdfs:subClassOf* <"+the_class+">.\n"
+                    + spot+" rdf:type ?category.}\n";
+
+
+        }
+
+        for(String the_property : properties){
+            System.out.println("");
+            inputQuery = inputQuery +"OPTIONAL{"+ spot+" project:"+the_property+" ?instance. FILTER regex(?instance,\"" +query_other_parts.trim()+ "\", \"i\")}\n";
+
+        }
+
+        inputQuery = inputQuery +"} \n OPTIONAL{";
+
+        for(String the_class : instances){
+            spot = the_class;
+            for(String the_property : properties){
+                System.out.println("");
+                inputQuery = inputQuery +"OPTIONAL{ <"+ spot+"> project:"+the_property+" ?instance. FILTER regex(?instance,\"" +query_other_parts.trim()+ "\", \"i\")}\n";
+
+            }
+
+        }
+
+        inputQuery = inputQuery + "}}\n";
+
+        //System.out.println(inputQuery);
+
+        queries.add(inputQuery);
     }
 }

@@ -28,7 +28,7 @@ public class Application extends Controller {
     public static Result recomendation(String query) {
 
         Search s = new Search();
-        return ok(toJson(s.search(query)));
+        return ok(toJson(s.searchRecomendation(query)));
 
     }
 
