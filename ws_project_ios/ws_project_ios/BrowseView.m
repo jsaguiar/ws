@@ -20,7 +20,6 @@
     return self;
 }
 
-
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -31,32 +30,42 @@
     self.backgroundColor = [UIColor clearColor];
     self.browseTableView.backgroundColor=[UIColor clearColor];
     
-    [self addObserver:self.info
-              forKeyPath:@"PlaceCategories"
-                 options:(NSKeyValueObservingOptionNew |
-                          NSKeyValueObservingOptionOld)
-                 context:NULL];
     
-    NSLog(@"called");
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.tintColor=[UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    
+    [self.browseTableView addSubview:self.refreshControl];
+    self.categoriesChosen  =[[NSMutableArray alloc]init];
+    
+    self.selected = [[NSMutableIndexSet alloc] init];
+    self.browseTableView.delegate=self;
+    self.browseTableView.dataSource=self;
+
+    
     // Drawing code
 }
+-(void) refresh{
+    [self.refreshControl endRefreshing];
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    
-    if ([keyPath isEqual:@"PlaceCategories"]) {
-        NSLog(@"changed");
-    }
-    /*
-     Be sure to call the superclass's implementation *if it implements it*.
-     NSObject does not implement the method.
-     */
-    [super observeValueForKeyPath:keyPath
-                         ofObject:object
-                           change:change
-                          context:context];
 }
 
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(0,0,300,44)];
+    tempView.backgroundColor=[UIColor clearColor];
+    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(0,0,300,44)];
+    tempLabel.backgroundColor=[UIColor clearColor];
+    tempLabel.text=@"CATEGORIES";
+    tempLabel.textColor=[UIColor whiteColor];
+    [tempView addSubview: tempLabel];
+    return tempView;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50;
+}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -75,12 +84,57 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     PlaceCategory *category= self.info[indexPath.row];
-    cell.textLabel.text= category.name;
-    //cell.textLabel.text=@"carmoan";
+    cell.textLabel.text= category.label;
     cell.backgroundColor=[UIColor clearColor];
  
+    if ([self.selected containsIndex:indexPath.row]) {
+        cell.backgroundColor=[UIColor lightGrayColor];
+    }
+    
+    if ([category.childNum intValue] >0){
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
+    else{
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
 
+    }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PlaceCategory *category= self.info[indexPath.row];
+
+    UITableViewCell *cell = [self.browseTableView cellForRowAtIndexPath:indexPath];
+    if (cell.backgroundColor == [UIColor lightGrayColor]){
+        [self.selected removeIndex:indexPath.row];
+        for (PlaceCategory* row in self.categoriesChosen) {
+            if (row.name==category.name) {
+                [self.categoriesChosen removeObject:row];
+                break;
+            }
+        }
+
+    }
+    else{
+        [self.selected addIndex:indexPath.row];
+        [self.categoriesChosen addObject:category];
+
+    }
+    
+    
+    [self.browseTableView reloadData];
+   
+    //self.oneCategory =category.name;
+    //NSLog(@"oneCategory %@",self.oneCategory);
+    if(self.categoriesChosen.count>0)
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"showLocation" object:nil];
+    else{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"removeAllLocations" object:nil];
+
+      
+    }
+
+
 }
 
 /*

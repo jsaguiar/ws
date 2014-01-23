@@ -8,15 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PlaceCategory : NSObject{
-    NSString *identifier;
-    NSString *name;
-}
+@interface PlaceCategory : NSObject
 
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *childNum;
 
-+ (id)PlaceCategoryWihtName:(NSString*)name withIdentifier:(NSString*)identifier;
+//+ (id)PlaceCategoryWihtName:(NSString*)name withIdentifier:(NSString*)identifier;
 
 
 @end

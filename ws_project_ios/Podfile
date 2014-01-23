@@ -1,2 +1,4 @@
-platform :ios
-pod 'Redland-ObjC', :git => 'https://github.com/p2/Redland-ObjC'
+platform :ios , '7.0'
+pod 'JSONModel'
+pod 'MBProgressHUD'
+

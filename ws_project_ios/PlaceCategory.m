@@ -9,16 +9,5 @@
 #import "PlaceCategory.h"
 
 @implementation PlaceCategory
-@synthesize name;
-@synthesize identifier;
-
-+ (id)PlaceCategoryWihtName:(NSString*)name withIdentifier:(NSString*)identifier{
-    PlaceCategory *category = [[self alloc] init];
-    category.name = identifier;
-    category.identifier = name;
-    
-    
-    return category;
-}
 
 @end
